@@ -1,18 +1,27 @@
 # DSA Tracker
 
 A 32-week DSA + development study tracker with built-in spaced repetition
-(day-2 / day-5 / day-10 revision), following Striver's A2Z sheet in the mornings
-and Namaste React/Node in the evenings. Vanilla HTML/CSS/JS, no framework, no
-build step, no dependencies, no account. All data lives in **your** browser's
-`localStorage` — nothing is uploaded anywhere.
+(day-2 / day-5 / day-10 revision), following Striver's A2Z sheet and Namaste
+React/Node. Vanilla HTML/CSS/JS, no framework, no build step.
+
+Two modes, controlled by `src/config.js`:
+
+- **Cloud mode** (config filled in): sign in with email + password; each user's
+  data lives in their own row in Supabase, visible only to them, available on
+  any device. This is the mode for sharing with a community.
+- **Local mode** (config empty): no accounts; data lives in the browser's
+  `localStorage`. Good for personal use — works fully offline via `file://`.
 
 ## Use it
 
-Open the app (hosted, or just double-click `index.html` — it works over `file://`
-and over http alike). On first launch it asks for **your start date**; the entire
-32-week roadmap, every weekly plan and every revision date is anchored to it.
-Weeks run Monday–Sunday, so the date snaps to a Monday. You can change it later
-on the Data screen.
+Open the app. After sign-in (cloud mode), first launch asks three things:
+
+- **Day 1** — the exact date you start. Every week and revision date counts
+  from it. Weeks are 7-day blocks: six study days, then a rest/consolidation day.
+- **Your DSA window** — a 3-hour block (default 06:30–09:30).
+- **Your dev window** — a 3-hour block (default 21:00–00:00).
+
+All three can be changed later on the Data screen.
 
 Then, daily:
 
@@ -42,6 +51,31 @@ Keyboard: `n` log a problem · `/` search problems · `1`–`7` switch screens �
 **Data → Download backup JSON**, weekly at minimum. Browser storage is one careless
 "clear browsing data" away from gone. The Today screen nags when the last backup is
 over 7 days old; listen to it.
+
+## Set up the backend (cloud mode, ~5 minutes)
+
+1. Create a free project at [supabase.com](https://supabase.com) (any name/region).
+2. In the project: **SQL Editor → New query**, paste and run:
+
+   ```sql
+   create table trackers (
+     user_id uuid primary key references auth.users (id) on delete cascade,
+     data jsonb not null,
+     updated_at timestamptz default now()
+   );
+   alter table trackers enable row level security;
+   create policy "own rows" on trackers
+     for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
+   ```
+
+   The policy is the security boundary: every user can read and write only
+   their own row, enforced by the database itself.
+3. **Settings → API**: copy the *Project URL* and the *anon public* key into
+   `src/config.js`. (The anon key is designed to be public — the row-level
+   security above is what protects the data.)
+4. Optional: **Authentication → URL Configuration** — set the Site URL to your
+   deployed address so password-reset emails link back correctly.
+5. Commit and deploy. The sign-in page appears automatically.
 
 ## Deploy your own
 

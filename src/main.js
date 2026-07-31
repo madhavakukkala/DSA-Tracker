@@ -1,5 +1,6 @@
-// Entry — hash router, nav state, keyboard shortcuts (§5, §6).
-// Back/forward and refresh work because the hash is the single source of truth.
+// Entry — boot order: auth gate (cloud mode) → load store → first-run
+// onboarding → hash router. Back/forward and refresh work because the hash is
+// the single source of truth.
 (function () {
   "use strict";
 
@@ -16,12 +17,11 @@
     return ROUTES.indexOf(name) !== -1 ? name : null;
   }
 
-  // ---- first-run onboarding: lock in a start date (weeks run Mon–Sun) ----
+  // ---- first-run onboarding: Day 1 + the two 3-hour windows ----
   function needsOnboarding() {
     if (Store.state.startDateChosen) return false;
     if (Store.state.problems.length > 0) {
-      // A pre-onboarding store: keep its date, just stamp the flag.
-      Store.setStartDate(Store.state.startDate);
+      Store.setStartDate(Store.state.startDate); // legacy store: keep, stamp flag
       return false;
     }
     return true;
@@ -30,44 +30,62 @@
   function renderOnboarding() {
     document.title = "Welcome — DSA Tracker";
     var today = Revision.todayLocal();
-    var suggested = UI.nextMonday(today);
+    var name = (window.Auth && Auth.active() && Auth.metaUsername()) || "";
     app.innerHTML =
       '<div class="onboard">' +
-      '<p class="eyebrow">32 weeks · 6:30–9:30 am DSA · 9–12 pm dev · Striver A2Z</p>' +
-      '<h1 class="page-title">Lock in your start date</h1>' +
-      '<p class="onboard-lede">The plan is 32 weeks: mornings for algorithms, nights for ' +
-      "development, Sundays for consolidation. Everything — every week, every revision date — " +
-      "is anchored to the day you start. Weeks run <b>Monday to Sunday</b>, so your date snaps " +
-      "to the Monday of the week you pick.</p>" +
+      '<p class="eyebrow">32 weeks · 3h DSA + 3h dev daily · Striver A2Z</p>' +
+      '<h1 class="page-title">Set up your plan</h1>' +
+      '<p class="onboard-lede">The plan is 32 weeks of 7-day blocks: <b>six study days, ' +
+      "then a rest day for consolidation</b>. The date you pick is Day 1 — every week and " +
+      "every revision date is counted from it. Then choose your two daily 3-hour windows: " +
+      "one for DSA, one for development.</p>" +
       '<form id="obForm" class="onboard-form" novalidate>' +
-      '<label class="f-field"><span>I start on</span>' +
-      '<input type="date" name="start" required value="' + suggested + '"></label>' +
+      '<label class="f-field"><span>Your name</span>' +
+      '<input name="username" maxlength="30" value="' + UI.esc(name) + '" autocomplete="nickname"></label>' +
+      '<div class="ob-row">' +
+      '<label class="f-field"><span>Day 1 — I start on</span>' +
+      '<input type="date" name="start" required value="' + today + '"></label>' +
+      '<label class="f-field"><span>DSA window starts</span>' +
+      '<input type="time" name="dsaStart" required value="06:30" step="300"></label>' +
+      '<label class="f-field"><span>Dev window starts</span>' +
+      '<input type="time" name="devStart" required value="21:00" step="300"></label>' +
+      "</div>" +
       '<p class="onboard-note mono" id="obNote"></p>' +
       '<button type="submit" class="btn btn-primary">Lock it in</button>' +
-      '<p class="small faint">You can change this later on the Data screen. ' +
-      "Everything stays on this device — nothing is uploaded anywhere.</p>" +
+      '<p class="small faint">All of this can be changed later on the Data screen.</p>' +
       "</form></div>";
 
     var form = document.getElementById("obForm");
     var note = document.getElementById("obNote");
     function preview() {
       var v = form.elements.start.value;
-      if (!v) { note.textContent = ""; return; }
-      var mon = UI.mondayOf(v);
-      note.textContent = "Week 1: " + UI.fmtRange(mon, Revision.addDays(mon, 6)) +
-        " · Week 32 ends " + UI.fmtShort(Revision.addDays(mon, 223));
+      var d = UI.parseHM(form.elements.dsaStart.value || "06:30");
+      var n = UI.parseHM(form.elements.devStart.value || "21:00");
+      var t = "DSA " + UI.fmtSpan(d, d + 180) + " · Dev " + UI.fmtSpan(n, n + 180);
+      if (v) {
+        t = "Day 1: " + UI.fmtShort(v) + " · Week 32 ends " +
+          UI.fmtShort(Revision.addDays(v, 223)) + " · " + t;
+      }
+      note.textContent = t;
     }
     preview();
-    form.elements.start.addEventListener("change", preview);
-    form.elements.start.addEventListener("input", preview);
+    ["start", "dsaStart", "devStart"].forEach(function (f) {
+      form.elements[f].addEventListener("change", preview);
+      form.elements[f].addEventListener("input", preview);
+    });
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var v = form.elements.start.value;
       if (!v) { form.elements.start.focus(); return; }
-      Store.setStartDate(UI.mondayOf(v));
+      Store.update(function (s) {
+        s.settings.username = form.elements.username.value.trim();
+        s.settings.dsaStart = form.elements.dsaStart.value || "06:30";
+        s.settings.devStart = form.elements.devStart.value || "21:00";
+      });
+      Store.setStartDate(v); // the exact date IS Day 1 — no snapping
       render();
     });
-    form.elements.start.focus();
+    form.elements.username.focus();
   }
 
   function render() {
@@ -79,7 +97,13 @@
 
     UI.closeModal();
 
+    // Keep the nav's 4px rule in sync with the learner's own hours.
+    try {
+      document.documentElement.style.setProperty("--day-strip", UI.dayStripCSS());
+    } catch (e) { /* decorative */ }
+
     if (needsOnboarding()) { renderOnboarding(); return; }
+
     var view = window.Views && window.Views[route];
     document.title = (view ? view.title : "DSA Tracker") + " — DSA Tracker";
 
@@ -110,13 +134,13 @@
     if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.tagName === "SELECT" ||
               t.isContentEditable)) return;
     if (UI.modalOpen()) return;
+    if (!Store.state || needsOnboarding()) return;
 
     if (e.key >= "1" && e.key <= "7") {
       location.hash = "#/" + ROUTES[+e.key - 1];
     } else if (e.key === "n") {
       e.preventDefault();
       if (routeFromHash() !== "today") { location.hash = "#/today"; }
-      // render happens synchronously on hashchange; then open the form
       setTimeout(function () {
         if (Views.today.openQuickLog) Views.today.openQuickLog();
       }, 0);
@@ -129,6 +153,28 @@
     }
   });
 
-  window.addEventListener("hashchange", render);
-  render();
+  // ---- boot ----
+  (async function boot() {
+    try { await Auth.init(); }
+    catch (e) { /* offline or misconfigured — fall through to local mode */ }
+
+    if (Auth.configured() && !Auth.active()) {
+      Auth.renderGate(app);
+      return;
+    }
+
+    await Store.init();
+
+    if (Auth.active()) {
+      var btn = document.createElement("button");
+      btn.className = "signout mono";
+      btn.textContent = "Sign out";
+      btn.title = Auth.userEmail();
+      btn.addEventListener("click", function () { Auth.signOut(); });
+      document.querySelector(".site-nav").appendChild(btn);
+    }
+
+    window.addEventListener("hashchange", render);
+    render();
+  })();
 })();

@@ -4,7 +4,6 @@
   "use strict";
   window.Views = window.Views || {};
   var esc = function (s) { return UI.esc(s); };
-  var DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   var STATUSES = ["not-started", "in-progress", "done"];
   var STATUS_GLYPH = { "not-started": "", "in-progress": "◐", "done": "✓" };
 
@@ -16,25 +15,27 @@
   }
 
   function openWeek(w) {
+    var sch = UI.schedule();
+    var span = function (pair) { return UI.fmtSpan(pair[0], pair[1]); };
     var html = "";
     w.d.forEach(function (x, i) {
-      html += '<div class="day"><div class="d-name">' + DAYS[i] + "<span></span></div>" +
-        block("learn", "06:50 – 07:50", "Learn", x[0]) +
-        block("prac", "07:50 – 09:20", "Practise", x[1]) +
-        block("eve", "21:00 – 23:45", "Night", x[2]) + "</div>";
+      html += '<div class="day"><div class="d-name">Day ' + (i + 1) + "<span></span></div>" +
+        block("learn", span(sch.dsa.learn), "Learn", x[0]) +
+        block("prac", span(sch.dsa.practise), "Practise", x[1]) +
+        block("eve", span(sch.dev.build), "Night", x[2]) + "</div>";
     });
-    html += '<div class="day rest"><div class="d-name">Sunday · consolidation<span></span></div>' +
-      block("learn", "06:30 – 09:30", "Morning", w.sun[0]) +
-      block("eve", "21:00 – 23:00", "Night", w.sun[1]) + "</div>";
+    html += '<div class="day rest"><div class="d-name">Day 7 · rest & consolidation<span></span></div>' +
+      block("learn", span([sch.dsa.start, sch.dsa.end]), "DSA", w.sun[0]) +
+      block("eve", span([sch.dev.start, sch.dev.end]), "Night", w.sun[1]) + "</div>";
     html += '<div class="day"><div class="d-name">Every day<span></span></div>' +
-      block("learn", "06:30 – 06:50", "Revision",
+      block("learn", span(sch.dsa.revision), "Revision",
         "Clear your revision queue on the Today screen — everything due at day 2, day 5 and day 10. " +
         "Read the title, state the approach and the complexity out loud in under 90 seconds. " +
-        "If you can't, mark it failed and re-solve it fully on Sunday.") +
-      block("prac", "09:20 – 09:30", "Log",
+        "If you can't, mark it failed and re-solve it fully on the rest day.") +
+      block("prac", span(sch.dsa.log), "Log",
         "Log every problem in the tracker: date, difficulty, whether you solved it alone, your " +
         "approach in one line, and a confidence score out of 5. The revision queue builds itself from this.") +
-      block("eve", "23:45 – 00:00", "Commit",
+      block("eve", span(sch.dev.commit), "Commit",
         "Push your code. Write tomorrow's first task on a sticky note so you don't lose the first " +
         "ten minutes deciding.") + "</div>";
 
@@ -61,6 +62,9 @@
 
       var counts = {};
       problems.forEach(function (p) { counts[p.week] = (counts[p.week] || 0) + 1; });
+      var sch = UI.schedule();
+      var dsaTag = UI.fmtSpan(sch.dsa.start, sch.dsa.end).replace("–", "—");
+      var devTag = UI.fmtSpan(sch.dev.start, sch.dev.end).replace("–", "—");
 
       var html =
         '<header class="page-head">' +
@@ -84,7 +88,7 @@
           html += '<div class="week st-' + st + (isCurrent ? " current" : "") +
             '" data-n="' + w.n + '" tabindex="0" role="button" aria-label="Week ' + w.n + ", " +
             esc(wRange) + ". Morning: " + esc(w.dsa) + ". Night: " + esc(w.dev) + '. Open the daily plan.">' +
-            '<div class="cell dsa"><span class="tag">06:30 — 09:30</span>' +
+            '<div class="cell dsa"><span class="tag">' + dsaTag + "</span>" +
             '<div class="topic">' + esc(w.dsa) + "</div>" +
             '<div class="sub mono">' + esc(w.step) + "</div>" +
             '<div class="wk-count mono' + (logged >= w.target ? " ok" : "") + '">' +
@@ -92,7 +96,7 @@
             '<div class="node"><div class="num mono"><small>WEEK</small><strong>' + w.n + "</strong></div>" +
             '<button class="tick-btn mono" data-n="' + w.n + '" aria-label="Week ' + w.n +
             ' status: ' + st + '. Click to change.">' + STATUS_GLYPH[st] + "</button></div>" +
-            '<div class="cell dev"><span class="tag">21:00 — 00:00</span>' +
+            '<div class="cell dev"><span class="tag">' + devTag + "</span>" +
             '<div class="topic">' + esc(w.dev) + "</div>" +
             '<div class="sub mono">' + esc(wRange) +
             (isCurrent ? " · THIS WEEK" : "") + "</div></div></div>";

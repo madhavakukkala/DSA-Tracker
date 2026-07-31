@@ -9,15 +9,7 @@
     '<h1 class="page-title">How this works</h1></header>' +
 
     '<section class="help-sec"><h2 class="section-title">Your daily shape</h2>' +
-    '<div class="help-rows">' +
-    '<div class="help-row"><span class="mono">06:30 – 06:50</span><p><b>Revision queue.</b> Open Today and clear it (day 2 / day 5 / day 10).</p></div>' +
-    '<div class="help-row"><span class="mono">06:50 – 07:50</span><p><b>Learn.</b> Striver\'s video or article for today\'s topic. Notes in your own words, not copied.</p></div>' +
-    '<div class="help-row"><span class="mono">07:50 – 09:20</span><p><b>Practise.</b> 2–3 new problems. Attempt for 25 min before any hint.</p></div>' +
-    '<div class="help-row"><span class="mono">09:20 – 09:30</span><p><b>Log.</b> Every problem goes in the log. This is what builds your revision queue.</p></div>' +
-    '<div class="help-row"><span class="mono">21:00 – 23:45</span><p><b>Development.</b> Weeks 1–8 your own HTML/CSS/JS sources. Weeks 9–14 Namaste React. Weeks 15–20 Namaste Node. Week 21+ interview prep.</p></div>' +
-    '<div class="help-row"><span class="mono">23:45 – 00:00</span><p><b>Commit your code.</b> Write tomorrow\'s first task on paper.</p></div>' +
-    '<div class="help-row"><span class="mono">Sunday</span><p><b>No new topics.</b> Morning = consolidation. Evening = core CS or a weekly retro.</p></div>' +
-    '</div></section>' +
+    '<div class="help-rows" id="helpShape"></div></section>' +
 
     '<section class="help-sec"><h2 class="section-title">The revision rule</h2>' +
     '<p>Every problem you solve gets revisited three times: <b>2 days later, 5 days later, and 10 days later</b>. ' +
@@ -58,6 +50,20 @@
       el.innerHTML = HTML;
       el.querySelector("#helpRange").textContent =
         UI.planRange() + " · 32 weeks · 1,344 hours · Striver A2Z in Python";
+      var sch = UI.schedule();
+      var row = function (pair, body) {
+        return '<div class="help-row"><span class="mono">' +
+          UI.fmtSpan(pair[0], pair[1]) + "</span><p>" + body + "</p></div>";
+      };
+      el.querySelector("#helpShape").innerHTML =
+        row(sch.dsa.revision, "<b>Revision queue.</b> Open Today and clear it (day 2 / day 5 / day 10).") +
+        row(sch.dsa.learn, "<b>Learn.</b> Striver's video or article for today's topic. Notes in your own words, not copied.") +
+        row(sch.dsa.practise, "<b>Practise.</b> 2–3 new problems. Attempt for 25 min before any hint.") +
+        row(sch.dsa.log, "<b>Log.</b> Every problem goes in the log. This is what builds your revision queue.") +
+        row(sch.dev.build, "<b>Development.</b> Weeks 1–8 your own HTML/CSS/JS sources. Weeks 9–14 Namaste React. Weeks 15–20 Namaste Node. Week 21+ interview prep.") +
+        row(sch.dev.commit, "<b>Commit your code.</b> Write tomorrow's first task on paper.") +
+        '<div class="help-row"><span class="mono">Day 7</span><p><b>No new topics.</b> ' +
+        "DSA window = consolidation. Dev window = core CS or a weekly retro.</p></div>";
     },
   };
 })();

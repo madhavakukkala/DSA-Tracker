@@ -47,6 +47,16 @@
   display:flex;flex-direction:column;gap:16px;align-items:flex-start}
 .onboard-form input[type="date"]{font-size:15px;padding:9px 12px}
 .onboard-note{font-size:11px;color:var(--dawn);min-height:1em}
+.ob-row{display:flex;gap:16px;flex-wrap:wrap;align-self:stretch}
+.onboard-form input[type="time"]{font-family:var(--font-mono);font-size:14px;padding:8px 10px}
+.onboard-form .f-field{min-width:150px}
+.signout{
+  font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;
+  padding:5px 9px;margin-left:10px;border:1px solid var(--line-2);border-radius:3px;
+  background:transparent;color:var(--muted);cursor:pointer;
+}
+.signout:hover{border-color:var(--ink);color:var(--ink)}
+.plan-grid{margin-top:14px}
 
 /* ---------- Banners ---------- */
 .banner{

@@ -20,20 +20,22 @@
     return DAY_NAMES[d.getDay()] + ", " + d.getDate() + " " + MONTHS[d.getMonth()] + " " + d.getFullYear();
   }
 
-  // Mon=0 … Sat=5, Sunday=6 (curriculum d[] is Mon–Sat, sun separate)
-  function dayIndex(dateStr) {
-    var p = dateStr.split("-");
-    var js = new Date(+p[0], +p[1] - 1, +p[2]).getDay(); // Sun=0
-    return js === 0 ? 6 : js - 1;
-  }
-
-  // Raw week number relative to startDate: week 1 starts on startDate (a Monday).
+  // Raw week number relative to startDate: week 1 begins on Day 1 — the exact
+  // date the learner locked in, whatever weekday that is. Weeks are 7-day
+  // blocks: days 1–6 study, day 7 consolidation/rest.
   // 0 or negative = before the plan starts; 33+ = after it ends.
   function rawWeek(dateStr, startDate) {
     return Math.floor(R.diffDays(startDate, dateStr) / 7) + 1;
   }
 
   function clampWeek(w) { return Math.max(1, Math.min(32, w)); }
+
+  // 0–5 = study days (curriculum d[0..5]), 6 = rest/consolidation (sun).
+  function dayOffset(dateStr, startDate) {
+    return ((R.diffDays(startDate, dateStr) % 7) + 7) % 7;
+  }
+
+  function dayLabel(i) { return i === 6 ? "Rest day" : "Day " + (i + 1); }
 
   // Everything Today and Roadmap need to know about "now".
   function currentWeekInfo() {
@@ -47,9 +49,37 @@
     return {
       today: today, raw: raw, week: week,
       beforeStart: raw < 1, afterEnd: raw > 32,
-      dayIndex: dayIndex(today),
+      dayIndex: dayOffset(today, start),
       weekData: weekData, phase: phase,
       daysToStart: raw < 1 ? R.diffDays(today, start) : 0,
+    };
+  }
+
+  // ---- the learner's daily schedule (two 3-hour windows) ----
+  function parseHM(hm) {
+    var p = (hm || "").split(":");
+    var v = (+p[0]) * 60 + (+p[1] || 0);
+    return isNaN(v) ? 0 : v;
+  }
+  function fmtHM(mins) {
+    var m = ((mins % 1440) + 1440) % 1440;
+    var h = Math.floor(m / 60), mm = m % 60;
+    return (h < 10 ? "0" + h : h) + ":" + (mm < 10 ? "0" + mm : mm);
+  }
+  function fmtSpan(a, b) { return fmtHM(a) + " – " + fmtHM(b); }
+
+  // Sub-blocks mirror the classic 6:30 shape: 20' revision, 60' learn,
+  // 90' practise, 10' log; nights are 165' build + 15' commit.
+  function schedule() {
+    var st = window.Store.state.settings || {};
+    var d = parseHM(st.dsaStart || "06:30");
+    var v = parseHM(st.devStart || "21:00");
+    return {
+      dsa: { start: d, end: d + 180,
+        revision: [d, d + 20], learn: [d + 20, d + 80],
+        practise: [d + 80, d + 170], log: [d + 170, d + 180] },
+      dev: { start: v, end: v + 180,
+        build: [v, v + 165], commit: [v + 165, v + 180] },
     };
   }
 
@@ -87,16 +117,6 @@
   function planEnd() { return R.addDays(Store.state.startDate, 223); }
   function planRange() { return fmtShort(Store.state.startDate) + " → " + fmtShort(planEnd()); }
 
-  // Monday on-or-before the given date (weeks are Mon–Sat + Sunday consolidation).
-  function mondayOf(dateStr) {
-    var i = dayIndex(dateStr); // Mon=0 … Sun=6
-    return R.addDays(dateStr, -i);
-  }
-  function nextMonday(dateStr) {
-    var i = dayIndex(dateStr);
-    return i === 0 ? dateStr : R.addDays(dateStr, 7 - i);
-  }
-
   function download(filename, text) {
     var blob = new Blob([text], { type: "application/json" });
     var url = URL.createObjectURL(blob);
@@ -112,9 +132,10 @@
   window.UI = window.UI || {};
   UI.esc = esc;
   UI.fmtHuman = fmtHuman;
-  UI.dayIndex = dayIndex;
   UI.rawWeek = rawWeek;
   UI.clampWeek = clampWeek;
+  UI.dayOffset = dayOffset;
+  UI.dayLabel = dayLabel;
   UI.currentWeekInfo = currentWeekInfo;
   UI.fmtShort = fmtShort;
   UI.fmtRange = fmtRange;
@@ -122,7 +143,9 @@
   UI.weekRange = weekRange;
   UI.phaseRange = phaseRange;
   UI.planRange = planRange;
-  UI.mondayOf = mondayOf;
-  UI.nextMonday = nextMonday;
+  UI.parseHM = parseHM;
+  UI.fmtHM = fmtHM;
+  UI.fmtSpan = fmtSpan;
+  UI.schedule = schedule;
   UI.download = download;
 })();

@@ -62,45 +62,51 @@
       var w = info.weekData;
       var problems = Store.state.problems;
       var queue = Revision.queue(problems, today);
-      var isSunday = info.dayIndex === 6;
-      var day = isSunday ? null : w.d[info.dayIndex];
+      var sch = UI.schedule();
+      var span = function (pair) { return UI.fmtSpan(pair[0], pair[1]); };
+      var isRest = info.dayIndex === 6;
+      var day = isRest ? null : w.d[info.dayIndex];
       var loggedToday = problems.filter(function (p) { return p.dateSolved === today; }).length;
 
       var contextNote = "";
       if (info.beforeStart) {
-        contextNote = '<p class="context-note mono">The plan starts Monday ' +
+        contextNote = '<p class="context-note mono">Day 1 is ' +
           esc(UI.fmtShort(Store.state.startDate)) + " — " +
-          info.daysToStart + " days away. Previewing Week 1, Monday.</p>";
+          info.daysToStart + " days away. Previewing Week 1, Day 1.</p>";
       } else if (info.afterEnd) {
         contextNote = '<p class="context-note mono">The 32 weeks are complete. Showing Week 32. Keep the tracker running.</p>';
       }
-      if (info.beforeStart) { isSunday = false; day = w.d[0]; }
+      if (info.beforeStart) { isRest = false; day = w.d[0]; }
 
       var morning, night;
-      if (isSunday) {
-        morning = subBlock("learn", "06:30 – 09:30", "Consolidation", esc(w.sun[0]));
-        night = subBlock("eve", "21:00 – 23:00", "Night", esc(w.sun[1]));
+      if (isRest) {
+        morning = subBlock("learn", span([sch.dsa.start, sch.dsa.end]), "Consolidation", esc(w.sun[0]));
+        night = subBlock("eve", span([sch.dev.start, sch.dev.end]), "Night", esc(w.sun[1]));
       } else {
         morning =
-          subBlock("learn", "06:30 – 06:50", "Revision",
-            queue.length === 0 ? "Nothing due this morning. Straight to learning."
+          subBlock("learn", span(sch.dsa.revision), "Revision",
+            queue.length === 0 ? "Nothing due this session. Straight to learning."
               : "Clear the queue below — <b>" + queue.length + " due</b>. Title → approach → complexity, out loud, under 90 seconds each.") +
-          subBlock("learn", "06:50 – 07:50", "Learn", esc(day[0])) +
-          subBlock("prac", "07:50 – 09:20", "Practise", esc(day[1])) +
-          subBlock("prac", "09:20 – 09:30", "Log",
+          subBlock("learn", span(sch.dsa.learn), "Learn", esc(day[0])) +
+          subBlock("prac", span(sch.dsa.practise), "Practise", esc(day[1])) +
+          subBlock("prac", span(sch.dsa.log), "Log",
             "Log every problem below — it builds tomorrow's revision queue.");
         night =
-          subBlock("eve", "21:00 – 23:45", "Build", esc(day[2])) +
-          subBlock("eve", "23:45 – 00:00", "Commit",
+          subBlock("eve", span(sch.dev.build), "Build", esc(day[2])) +
+          subBlock("eve", span(sch.dev.commit), "Commit",
             "Push your code. Write tomorrow's first task on a sticky note.");
       }
 
       el.innerHTML =
         warningBanners(queue.length) +
         '<header class="page-head">' +
-        '<p class="eyebrow">' + esc(UI.fmtHuman(today)) + " · Phase " + w.ph + " — " +
+        '<p class="eyebrow">' + esc(UI.fmtHuman(today)) +
+        (Store.state.settings.username ? " · " + esc(Store.state.settings.username) : "") +
+        " · Phase " + w.ph + " — " +
         esc(info.phase.title) + " · " + esc(UI.phaseRange(w.ph)) + "</p>" +
-        '<h1 class="page-title">Week ' + info.week + ' <em class="faint">of 32</em></h1>' +
+        '<h1 class="page-title">Week ' + info.week + ' <em class="faint">of 32</em>' +
+        ' <em class="faint">· ' +
+        esc(info.beforeStart ? "Day 1" : UI.dayLabel(info.dayIndex)) + "</em></h1>" +
         '<p class="week-line small">' + esc(w.dsa) + ' <span class="mono faint">' + esc(w.step) +
         "</span> — evenings: " + esc(w.dev) + "</p>" +
         contextNote +
@@ -108,11 +114,13 @@
         '<div class="daystrip">' + UI.dayStripHero() + "</div>" +
 
         '<div class="panels">' +
-        '<section class="panel panel-dawn" aria-label="Morning">' +
-        '<div class="panel-head mono">' + (isSunday ? "SUNDAY · CONSOLIDATION" : "MORNING · 06:30 — 09:30") + "</div>" +
+        '<section class="panel panel-dawn" aria-label="DSA window">' +
+        '<div class="panel-head mono">' +
+        (isRest ? "REST DAY · CONSOLIDATION"
+                : "DSA · " + span([sch.dsa.start, sch.dsa.end])) + "</div>" +
         morning + "</section>" +
-        '<section class="panel panel-dusk" aria-label="Night">' +
-        '<div class="panel-head mono">NIGHT · 21:00 — 00:00</div>' +
+        '<section class="panel panel-dusk" aria-label="Dev window">' +
+        '<div class="panel-head mono">DEV · ' + span([sch.dev.start, sch.dev.end]) + "</div>" +
         night + "</section></div>" +
 
         '<section class="queue-sec" aria-label="Revision queue">' +

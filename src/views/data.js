@@ -33,12 +33,24 @@
         Store.state.dailyLogs.length + " daily logs</p>" +
         '<button class="btn btn-primary" id="dExport">Download backup JSON</button></section>' +
 
-        '<section class="data-sec"><h2 class="section-title">Plan start date</h2>' +
-        '<p class="small faint">Every week and revision window is anchored to this date. ' +
-        "Weeks run Monday–Sunday, so it snaps to a Monday. Changing it re-maps the roadmap; " +
-        "logged problems keep their dates.</p>" +
-        '<div class="reset-row"><input type="date" id="dStart" value="' + esc(Store.state.startDate) + '">' +
-        '<button class="btn" id="dStartSave">Save</button>' +
+        '<section class="data-sec"><h2 class="section-title">Your plan</h2>' +
+        (Auth.active()
+          ? '<p class="small faint">Signed in as <b>' + esc(Auth.userEmail()) +
+            "</b> — data is stored in your account and follows you across devices.</p>"
+          : '<p class="small faint">Local mode — data lives in this browser only.</p>') +
+        '<p class="small faint">The date below is <b>Day 1</b>. Every week and revision ' +
+        "window counts from it. Changing it re-maps the roadmap; logged problems keep their dates.</p>" +
+        '<div class="f-grid plan-grid">' +
+        '<label class="f-field"><span>Name</span>' +
+        '<input id="dName" maxlength="30" value="' + esc(Store.state.settings.username) + '"></label>' +
+        '<label class="f-field"><span>Day 1</span>' +
+        '<input type="date" id="dStart" value="' + esc(Store.state.startDate) + '"></label>' +
+        '<label class="f-field"><span>DSA window starts</span>' +
+        '<input type="time" id="dDsa" step="300" value="' + esc(Store.state.settings.dsaStart) + '"></label>' +
+        '<label class="f-field"><span>Dev window starts</span>' +
+        '<input type="time" id="dDev" step="300" value="' + esc(Store.state.settings.devStart) + '"></label>' +
+        "</div>" +
+        '<div class="f-actions"><button class="btn" id="dStartSave">Save plan settings</button>' +
         '<span class="mono faint" id="dStartNote"></span></div></section>' +
 
         '<section class="data-sec"><h2 class="section-title">Import</h2>' +
@@ -59,8 +71,13 @@
       el.querySelector("#dStartSave").addEventListener("click", function () {
         var v = el.querySelector("#dStart").value;
         if (!v) return;
-        Store.setStartDate(UI.mondayOf(v));
-        el.querySelector("#dStartNote").textContent = "Saved — week 1 starts " +
+        Store.update(function (s) {
+          s.settings.username = el.querySelector("#dName").value.trim();
+          s.settings.dsaStart = el.querySelector("#dDsa").value || "06:30";
+          s.settings.devStart = el.querySelector("#dDev").value || "21:00";
+        });
+        Store.setStartDate(v); // exact Day 1, no snapping
+        el.querySelector("#dStartNote").textContent = "Saved — Day 1 is " +
           UI.fmtShort(Store.state.startDate);
       });
 
