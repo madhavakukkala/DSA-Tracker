@@ -11,9 +11,9 @@
     var lastFocus = document.activeElement;
 
     var scrim = document.createElement("div");
-    scrim.className = "scrim open";
+    scrim.className = "scrim";
     var modal = document.createElement("aside");
-    modal.className = "modal open";
+    modal.className = "modal";
     modal.setAttribute("role", "dialog");
     modal.setAttribute("aria-modal", "true");
     modal.innerHTML =
@@ -24,14 +24,25 @@
     document.body.appendChild(scrim);
     document.body.appendChild(modal);
     document.body.style.overflow = "hidden";
+    // Two frames in, add .open so the enter transition actually runs.
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        scrim.classList.add("open");
+        modal.classList.add("open");
+      });
+    });
 
     function close() {
       if (current !== api) return;
       current = null;
-      document.body.removeChild(scrim);
-      document.body.removeChild(modal);
+      scrim.classList.remove("open");
+      modal.classList.remove("open");
       document.body.style.overflow = "";
       document.removeEventListener("keydown", onKey);
+      setTimeout(function () {
+        if (scrim.parentNode) scrim.parentNode.removeChild(scrim);
+        if (modal.parentNode) modal.parentNode.removeChild(modal);
+      }, 280);
       if (lastFocus && lastFocus.focus) lastFocus.focus();
       if (opts.onClose) opts.onClose();
     }
