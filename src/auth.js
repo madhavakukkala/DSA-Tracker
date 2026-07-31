@@ -77,9 +77,11 @@
         '<section class="auth-pitch">' +
         '<p class="eyebrow">32 weeks · Striver A2Z · Namaste React &amp; Node</p>' +
         '<h1 class="auth-title">Six hours<br><em>a day.</em></h1>' +
-        '<p class="auth-lede">Two lit windows in a dark 24 — one for algorithms, one for code. ' +
-        "Pick your own hours, log every solve, and the tracker brings each problem back at " +
-        "day 2, day 5 and day 10 until you own it.</p>" +
+        '<p class="auth-lede">Made for working professionals — non-IT or any other field — ' +
+        "who want to learn and be job-ready in about 8 months. I built it for myself: I follow " +
+        "Striver and Akshay Saini, plus a few things from YouTube and other sources. Follow it " +
+        "properly and you'll come out with DSA + Dev + CS — OS, System Design, DBMS. " +
+        "All the best. Be consistent.</p>" +
         '<div class="auth-strip">' + stripHTML() + "</div>" +
         '<div class="auth-stats mono"><span><b>462</b> problems</span>' +
         "<span><b>224</b> days planned</span><span><b>3×</b> every solve revised</span></div>" +
