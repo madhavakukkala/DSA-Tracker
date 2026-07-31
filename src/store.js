@@ -131,8 +131,17 @@
 
   function doSave() {
     saveTimer = null;
-    Promise.resolve()
-      .then(function () { return driver.save(state); })
+    // Call the driver synchronously: the local driver writes to localStorage
+    // before returning, so a beforeunload flush can never lose the write.
+    // The cloud driver returns a promise; failures land in the catch below.
+    var result;
+    try { result = driver.save(state); }
+    catch (e) {
+      storageBroken = true;
+      storageError = "Saving failed (" + e.message + "). Export a backup now.";
+      return;
+    }
+    Promise.resolve(result)
       .then(function () { storageBroken = false; storageError = ""; })
       .catch(function (e) {
         storageBroken = true;

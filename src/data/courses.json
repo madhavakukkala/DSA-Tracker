@@ -2,11 +2,6 @@
  "note": "React course lists DevTinder UI as bonus - identical to Node S2 Ep 15-19, scheduled once in wk 19",
  "items": [
   {
-   "id": "b01",
-   "course": "NAMASTE REACT + NAMASTE NODE - tick 'Watched' only after you have also built along. Watching alone does not count.",
-   "plannedWeek": 0
-  },
-  {
    "id": "r01",
    "course": "React",
    "section": "Namaste React Web Series",
