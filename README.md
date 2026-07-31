@@ -1,61 +1,117 @@
 # DSA Tracker
 
-A 32-week DSA + development study tracker with built-in spaced repetition
-(day-2 / day-5 / day-10 revision), following Striver's A2Z sheet and Namaste
-React/Node. Vanilla HTML/CSS/JS, no framework, no build step.
+**Live app: https://dsa-tracker-five-pearl.vercel.app/**
 
-Two modes, controlled by `src/config.js`:
+A 32-week study tracker for cracking DSA and development side by side:
+mornings on [Striver's A2Z sheet](https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2)
+(in Python), nights on Namaste React & Node, six days a week, with a built-in
+**spaced-repetition engine** that brings every problem you solve back at
+**day 2, day 5 and day 10** until you actually own it.
 
-- **Cloud mode** (config filled in): sign in with email + password; each user's
-  data lives in their own row in Supabase, visible only to them, available on
-  any device. This is the mode for sharing with a community.
-- **Local mode** (config empty): no accounts; data lives in the browser's
-  `localStorage`. Good for personal use — works fully offline via `file://`.
+One account, all your problems, revisions and progress — on any device.
+Your study data is visible only to you.
 
-## Use it
+---
 
-Open the app. After sign-in (cloud mode), first launch asks three things:
+## Getting started (2 minutes)
 
-- **Day 1** — the exact date you start. Every week and revision date counts
-  from it. Weeks are 7-day blocks: six study days, then a rest/consolidation day.
-- **Your DSA window** — a 3-hour block (default 06:30–09:30).
-- **Your dev window** — a 3-hour block (default 21:00–00:00).
+1. Open the app and **Create account** — email, password, and the name you
+   want shown in the app.
+2. On the setup screen, lock in three things:
+   - **Day 1** — the exact date you start. Every week and every revision date
+     is counted from this day. Weeks are 7-day blocks: six study days, then
+     **Day 7 to consolidate** (no new topics — you re-solve what fought back
+     and cover core CS).
+   - **Your DSA window** — a 3-hour block, whenever suits your life
+     (default 06:30–09:30).
+   - **Your dev window** — a second 3-hour block (default 21:00–00:00).
+3. That's it. The Today screen now shows exactly what to do, every day, for
+   32 weeks.
 
-All three can be changed later on the Data screen.
+All three settings can be changed later on the **Data** screen — but changing
+Day 1 **resets your tracker** and restarts the 32 weeks, so pick it carefully.
 
-Then, daily:
+## The daily loop
 
-1. **Morning 6:30** — open **Today**, clear the revision queue (say the approach
-   out loud *before* pressing Reveal), then follow the Learn / Practise blocks.
-2. **9:20** — press `n` and log every problem you solved. This builds the queue.
-3. **Night 9:00** — the Night panel has your dev task; tick episodes in Courses
-   as you *build* them.
-4. **Weekly** — Data → Download backup JSON. Browser storage is one careless
-   "clear browsing data" away from gone.
+**In your DSA window:**
 
-Because everything is per-browser, use the same browser on the same device —
-or move between devices with export/import.
+| When | What |
+|---|---|
+| First 20 min | **Revision queue.** For each problem due: read the title, say the approach and complexity *out loud*, **then** press *Reveal* to check yourself. Got it → **✓ Recalled**. Didn't → leave it, re-solve on Day 7. |
+| Next 60 min | **Learn** — the day's topic (video/article), notes in your own words. |
+| Next 90 min | **Practise** — the day's listed problems. Fight for 25 minutes before any hint. |
+| Last 10 min | **Log** — press **`n`** and log every problem you solved. Twenty seconds each. **This is what builds your revision queue** — an unlogged problem is never revised. |
 
-(Classic `<script defer>` tags are used instead of ES modules, because browsers
-block module imports on `file://` URLs.)
+**In your dev window:** the Night panel shows the day's build task. Tick
+episodes in **Courses** only after you've *built along* — watching without
+building is not progress. Push your code before you stop.
 
-## Screens
+**On Day 7:** no new topics. The morning is consolidation (re-solve the
+week's hardest cold), the evening is core CS or a weekly retro.
 
-`#/today` (home) · `#/problems` · `#/roadmap` · `#/progress` · `#/courses` ·
-`#/applications` · `#/data` · `#/help`
+## When you log a problem
 
-Keyboard: `n` log a problem · `/` search problems · `1`–`7` switch screens · `Esc` close.
+Fill in honestly — the tracker's warnings only work with honest data:
 
-## Back up your data
+- **Solved how**: *alone* / *with a hint* / *editorial*. Reading the editorial
+  counts as not solving — the problem gets flagged **REDO** no matter how it felt.
+- **Confidence 1–5**: 2 or below also flags **REDO**.
+- **Approach in one line**: future-you revises from this line, so make it the
+  actual idea ("sort by end time, greedy pick"), not "solved it".
 
-**Data → Download backup JSON**, weekly at minimum. Browser storage is one careless
-"clear browsing data" away from gone. The Today screen nags when the last backup is
-over 7 days old; listen to it.
+## The screens
 
-## Set up the backend (cloud mode, ~5 minutes)
+| Screen | What it's for |
+|---|---|
+| **Today** | The home screen, twice a day: the day's plan, the revision queue, the quick log. |
+| **Problems** | Every problem ever logged. Search, filter, sort; click a row to edit, fix revisions, or delete. |
+| **Roadmap** | All 32 weeks on one timeline. Click a week for its day-by-day plan; the small circle cycles your status (not started → ◐ in progress → ✓ done). |
+| **Progress** | The numbers, honestly: due counts, solved-alone rate, streak, topic and difficulty breakdowns, and a 30-day revision-health line. |
+| **Courses** | Every Namaste React/Node episode and every Striver sub-step, mapped to its planned week, with your toggles. |
+| **Applications** | From week 19: every application, every follow-up. Rows quietly nag after 10 silent days. |
+| **Data** | Your plan settings, backup export/import, and the danger zone. |
+| **Help** | The method, your daily shape, and the two warnings — in-app. |
 
-1. Create a free project at [supabase.com](https://supabase.com) (any name/region).
-2. In the project: **SQL Editor → New query**, paste and run:
+## Keyboard
+
+| Key | Action |
+|---|---|
+| `n` | Log a new problem |
+| `/` | Search problems |
+| `1`–`7` | Switch screens |
+| `Esc` | Close any modal or form |
+
+## The two warnings that matter
+
+1. **Backlog over 25.** If the Today screen shows the red backlog banner,
+   stop taking new topics for two days and clear it. A backlog you never
+   clear is the same as never having solved those problems.
+2. **Solved-alone under 40%.** If Progress turns this stat amber, you're
+   reading editorials rather than solving. Take fewer problems and fight
+   harder for each. Four problems you fought for beat twelve you skimmed.
+
+## Your data
+
+- Stored in your account, synced on every change, available on any device.
+- **Data → Download backup JSON** now and then anyway — it's your personal
+  safety net, and Import restores it anywhere.
+- Changing Day 1 resets the tracker (with a warning). **Delete account** on
+  the Data screen erases your account and all its data, permanently —
+  no email required, no questions asked.
+
+---
+
+## For maintainers
+
+Vanilla HTML/CSS/JS — no framework, no build step. Two modes via
+`src/config.js`: **cloud** (Supabase URL + publishable key filled in → sign-in
+required, one row per user) or **local** (config empty → no accounts,
+localStorage only, works offline over `file://`).
+
+### Backend setup (once, ~5 minutes)
+
+1. Create a free project at [supabase.com](https://supabase.com).
+2. SQL Editor → run:
 
    ```sql
    create table trackers (
@@ -68,8 +124,6 @@ over 7 days old; listen to it.
      for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
 
    -- Self-serve account deletion (Data screen → Delete account).
-   -- security definer lets the function remove the caller's own auth user;
-   -- the trackers row cascades away with it.
    create or replace function delete_user()
    returns void
    language sql
@@ -80,53 +134,44 @@ over 7 days old; listen to it.
    $$;
    ```
 
-   The policy is the security boundary: every user can read and write only
-   their own row, enforced by the database itself. `delete_user()` can only
-   ever delete the account of whoever calls it.
-3. **Settings → API**: copy the *Project URL* and the *anon public* key into
-   `src/config.js`. (The anon key is designed to be public — the row-level
-   security above is what protects the data.)
-4. Optional: **Authentication → URL Configuration** — set the Site URL to your
-   deployed address so password-reset emails link back correctly.
-5. Commit and deploy. The sign-in page appears automatically.
+   Row-level security is the boundary: every user reads and writes only their
+   own row, enforced by the database. `delete_user()` can only delete the
+   caller's own account.
+3. Settings → API: copy the *Project URL* and *publishable (anon)* key into
+   `src/config.js`. Never use the secret/service_role key anywhere.
+4. Authentication → URL Configuration: set the Site URL to the deployed
+   address so confirmation/reset emails link back correctly.
+5. Heads-up: Supabase's built-in email is rate-limited (~a few per hour).
+   For a community launch either disable "Confirm email" or connect custom
+   SMTP (e.g. Resend's free tier).
 
-## Deploy your own
+### Deploy
 
-It's a static site — any static host works with zero configuration:
+Static site, zero config: Vercel (preset "Other", no build command) or
+GitHub Pages (deploy `main`, root folder).
 
-- **Vercel**: import the repo, framework preset "Other", no build command,
-  output directory = repo root. Deploy.
-- **GitHub Pages**: Settings → Pages → deploy from branch `main`, root folder.
-
-## Development
+### Development
 
 ```
-tests/revision.test.js       acceptance tests for the revision engine (§10 of the spec)
-    node tests/revision.test.js
-
-tools/extract-curriculum.js  regenerates src/data/curriculum.json/.js from dsa-dev-roadmap.html
-    node tools/extract-curriculum.js
+node tests/revision.test.js        # spaced-repetition acceptance tests
+node tools/extract-curriculum.js   # regenerate src/data/curriculum.* from the roadmap HTML
 ```
-
-`src/data/*.js` files are generated mirrors of the committed `*.json` (a classic-script
-global is the only way to load local data on `file://`, where `fetch()` is blocked).
-`striver.json` and `courses.json` were extracted once from the workbook's Striver
-Checklist and Course Checklist sheets.
-
-Layout:
 
 ```
 index.html
 src/
-  main.js          router, nav, keyboard shortcuts
-  store.js         localStorage, schema versioning, export/import
+  main.js          router, onboarding, keyboard shortcuts
+  auth.js          Supabase email/password gate
+  config.js        backend keys (cloud mode on/off)
+  store.js         state, cloud/local persistence, export/import
   revision.js      spaced-repetition engine — pure functions, no DOM
   components/      helpers.js  modal.js  dayStrip.js  problemForm.js
-  views/           today.js  problems.js  roadmap.js  progress.js
-                   courses.js  applications.js  data.js  help.js
-  data/            curriculum(.json/.js)  striver(.json/.js)  courses(.json/.js)
-styles/
-  tokens.css  base.css  components.css
-tools/             extract-curriculum.js
-tests/             revision.test.js
+  views/           today problems roadmap progress courses applications data help
+  data/            curriculum striver courses (.json + generated .js mirrors)
+styles/            tokens.css  base.css  components.css
 ```
+
+`src/data/*.js` are generated mirrors of the committed `.json` (classic-script
+globals are the only way to load local data over `file://`, where `fetch()`
+is blocked). Curriculum extracted from `dsa-dev-roadmap.html`; checklists from
+the original `dsa-tracker.xlsx`.
