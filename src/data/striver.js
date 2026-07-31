@@ -1,0 +1,598 @@
+// GENERATED from the dsa-tracker.xlsx Striver Checklist sheet — do not edit by hand.
+window.SEED = window.SEED || {};
+window.SEED.striver = [
+ {
+  "id": "s1.1",
+  "step": 1,
+  "section": "Learn the basics",
+  "subStep": "1.1 Things to know / patterns",
+  "problemCount": 8,
+  "plannedWeek": 1,
+  "added": false
+ },
+ {
+  "id": "s1.2",
+  "step": 1,
+  "section": "Learn the basics",
+  "subStep": "1.2 Build-up logical thinking (patterns)",
+  "problemCount": 1,
+  "plannedWeek": 1,
+  "added": false
+ },
+ {
+  "id": "s1.3",
+  "step": 1,
+  "section": "Learn the basics",
+  "subStep": "1.3 Learn STL / Python collections",
+  "problemCount": 2,
+  "plannedWeek": 2,
+  "added": false
+ },
+ {
+  "id": "s1.4",
+  "step": 1,
+  "section": "Learn the basics",
+  "subStep": "1.4 Know basic maths",
+  "problemCount": 7,
+  "plannedWeek": 2,
+  "added": false
+ },
+ {
+  "id": "s1.5",
+  "step": 1,
+  "section": "Learn the basics",
+  "subStep": "1.5 Learn basic recursion",
+  "problemCount": 9,
+  "plannedWeek": 2,
+  "added": false
+ },
+ {
+  "id": "s1.6",
+  "step": 1,
+  "section": "Learn the basics",
+  "subStep": "1.6 Learn basic hashing",
+  "problemCount": 3,
+  "plannedWeek": 2,
+  "added": false
+ },
+ {
+  "id": "s2.1",
+  "step": 2,
+  "section": "Sorting techniques",
+  "subStep": "2.1 Sorting-I (selection, bubble, insertion)",
+  "problemCount": 3,
+  "plannedWeek": 3,
+  "added": false
+ },
+ {
+  "id": "s2.2",
+  "step": 2,
+  "section": "Sorting techniques",
+  "subStep": "2.2 Sorting-II (merge, quick, recursive)",
+  "problemCount": 4,
+  "plannedWeek": 3,
+  "added": false
+ },
+ {
+  "id": "s3.1",
+  "step": 3,
+  "section": "Arrays",
+  "subStep": "3.1 Easy",
+  "problemCount": 14,
+  "plannedWeek": 3,
+  "added": false
+ },
+ {
+  "id": "s3.2",
+  "step": 3,
+  "section": "Arrays",
+  "subStep": "3.2 Medium",
+  "problemCount": 14,
+  "plannedWeek": 4,
+  "added": false
+ },
+ {
+  "id": "s3.3",
+  "step": 3,
+  "section": "Arrays",
+  "subStep": "3.3 Hard",
+  "problemCount": 12,
+  "plannedWeek": 5,
+  "added": false
+ },
+ {
+  "id": "x-intervals-sweep-line",
+  "step": null,
+  "section": "ADDED - not in A2Z",
+  "subStep": "Intervals & sweep line",
+  "problemCount": 5,
+  "plannedWeek": 5,
+  "added": true
+ },
+ {
+  "id": "s4.1",
+  "step": 4,
+  "section": "Binary Search",
+  "subStep": "4.1 BS on 1D arrays",
+  "problemCount": 13,
+  "plannedWeek": 6,
+  "added": false
+ },
+ {
+  "id": "s4.2",
+  "step": 4,
+  "section": "Binary Search",
+  "subStep": "4.2 BS on answers",
+  "problemCount": 11,
+  "plannedWeek": 7,
+  "added": false
+ },
+ {
+  "id": "s4.3",
+  "step": 4,
+  "section": "Binary Search",
+  "subStep": "4.3 BS on 2D arrays",
+  "problemCount": 4,
+  "plannedWeek": 7,
+  "added": false
+ },
+ {
+  "id": "s5.1",
+  "step": 5,
+  "section": "Strings",
+  "subStep": "5.1 Basic and easy",
+  "problemCount": 7,
+  "plannedWeek": 8,
+  "added": false
+ },
+ {
+  "id": "s5.2",
+  "step": 5,
+  "section": "Strings",
+  "subStep": "5.2 Medium",
+  "problemCount": 8,
+  "plannedWeek": 8,
+  "added": false
+ },
+ {
+  "id": "s6.1",
+  "step": 6,
+  "section": "Linked List",
+  "subStep": "6.1 Learn 1D linked list",
+  "problemCount": 5,
+  "plannedWeek": 9,
+  "added": false
+ },
+ {
+  "id": "s6.2",
+  "step": 6,
+  "section": "Linked List",
+  "subStep": "6.2 Learn doubly linked list",
+  "problemCount": 4,
+  "plannedWeek": 9,
+  "added": false
+ },
+ {
+  "id": "s6.3",
+  "step": 6,
+  "section": "Linked List",
+  "subStep": "6.3 Medium problems",
+  "problemCount": 15,
+  "plannedWeek": 10,
+  "added": false
+ },
+ {
+  "id": "s6.4",
+  "step": 6,
+  "section": "Linked List",
+  "subStep": "6.4 Hard problems",
+  "problemCount": 7,
+  "plannedWeek": 10,
+  "added": false
+ },
+ {
+  "id": "s7.1",
+  "step": 7,
+  "section": "Recursion",
+  "subStep": "7.1 Get a strong hold",
+  "problemCount": 5,
+  "plannedWeek": 11,
+  "added": false
+ },
+ {
+  "id": "s7.2",
+  "step": 7,
+  "section": "Recursion",
+  "subStep": "7.2 Subsequences pattern",
+  "problemCount": 12,
+  "plannedWeek": 11,
+  "added": false
+ },
+ {
+  "id": "s7.3",
+  "step": 7,
+  "section": "Recursion",
+  "subStep": "7.3 Trying all combos / hard",
+  "problemCount": 8,
+  "plannedWeek": 12,
+  "added": false
+ },
+ {
+  "id": "s8.1",
+  "step": 8,
+  "section": "Bit Manipulation",
+  "subStep": "8.1 Learn the basics",
+  "problemCount": 8,
+  "plannedWeek": 13,
+  "added": false
+ },
+ {
+  "id": "s8.2",
+  "step": 8,
+  "section": "Bit Manipulation",
+  "subStep": "8.2 Interview problems",
+  "problemCount": 6,
+  "plannedWeek": 13,
+  "added": false
+ },
+ {
+  "id": "s8.3",
+  "step": 8,
+  "section": "Bit Manipulation",
+  "subStep": "8.3 Advanced maths",
+  "problemCount": 4,
+  "plannedWeek": 13,
+  "added": false
+ },
+ {
+  "id": "x-number-theory-modular-ar",
+  "step": null,
+  "section": "ADDED - not in A2Z",
+  "subStep": "Number theory: modular arithmetic, mod inverse",
+  "problemCount": 3,
+  "plannedWeek": 13,
+  "added": true
+ },
+ {
+  "id": "s9.1",
+  "step": 9,
+  "section": "Stacks & Queues",
+  "subStep": "9.1 Learn implementation",
+  "problemCount": 9,
+  "plannedWeek": 14,
+  "added": false
+ },
+ {
+  "id": "s9.2",
+  "step": 9,
+  "section": "Stacks & Queues",
+  "subStep": "9.2 Prefix, infix, postfix",
+  "problemCount": 6,
+  "plannedWeek": 14,
+  "added": false
+ },
+ {
+  "id": "s9.3",
+  "step": 9,
+  "section": "Stacks & Queues",
+  "subStep": "9.3 Monotonic stack / queue",
+  "problemCount": 11,
+  "plannedWeek": 15,
+  "added": false
+ },
+ {
+  "id": "s9.4",
+  "step": 9,
+  "section": "Stacks & Queues",
+  "subStep": "9.4 Implementation problems",
+  "problemCount": 5,
+  "plannedWeek": 15,
+  "added": false
+ },
+ {
+  "id": "s10.1",
+  "step": 10,
+  "section": "Sliding Window",
+  "subStep": "10.1 Medium problems",
+  "problemCount": 8,
+  "plannedWeek": 16,
+  "added": false
+ },
+ {
+  "id": "s10.2",
+  "step": 10,
+  "section": "Sliding Window",
+  "subStep": "10.2 Hard problems",
+  "problemCount": 4,
+  "plannedWeek": 16,
+  "added": false
+ },
+ {
+  "id": "s11.1",
+  "step": 11,
+  "section": "Heaps",
+  "subStep": "11.1 Learn theory",
+  "problemCount": 2,
+  "plannedWeek": 17,
+  "added": false
+ },
+ {
+  "id": "s11.2",
+  "step": 11,
+  "section": "Heaps",
+  "subStep": "11.2 Medium problems",
+  "problemCount": 7,
+  "plannedWeek": 17,
+  "added": false
+ },
+ {
+  "id": "s11.3",
+  "step": 11,
+  "section": "Heaps",
+  "subStep": "11.3 Hard problems",
+  "problemCount": 5,
+  "plannedWeek": 17,
+  "added": false
+ },
+ {
+  "id": "s12.1",
+  "step": 12,
+  "section": "Greedy",
+  "subStep": "12.1 Easy problems",
+  "problemCount": 5,
+  "plannedWeek": 18,
+  "added": false
+ },
+ {
+  "id": "s12.2",
+  "step": 12,
+  "section": "Greedy",
+  "subStep": "12.2 Medium / hard",
+  "problemCount": 11,
+  "plannedWeek": 18,
+  "added": false
+ },
+ {
+  "id": "s13.1",
+  "step": 13,
+  "section": "Binary Trees",
+  "subStep": "13.1 Traversals",
+  "problemCount": 13,
+  "plannedWeek": 19,
+  "added": false
+ },
+ {
+  "id": "s13.2",
+  "step": 13,
+  "section": "Binary Trees",
+  "subStep": "13.2 Medium problems",
+  "problemCount": 12,
+  "plannedWeek": 19,
+  "added": false
+ },
+ {
+  "id": "s13.3",
+  "step": 13,
+  "section": "Binary Trees",
+  "subStep": "13.3 Hard problems",
+  "problemCount": 14,
+  "plannedWeek": 20,
+  "added": false
+ },
+ {
+  "id": "s14.1",
+  "step": 14,
+  "section": "BST",
+  "subStep": "14.1 Concepts",
+  "problemCount": 2,
+  "plannedWeek": 21,
+  "added": false
+ },
+ {
+  "id": "s14.2",
+  "step": 14,
+  "section": "BST",
+  "subStep": "14.2 Practice problems",
+  "problemCount": 6,
+  "plannedWeek": 21,
+  "added": false
+ },
+ {
+  "id": "s14.3",
+  "step": 14,
+  "section": "BST",
+  "subStep": "14.3 Medium / hard",
+  "problemCount": 8,
+  "plannedWeek": 21,
+  "added": false
+ },
+ {
+  "id": "s15.1",
+  "step": 15,
+  "section": "Graphs",
+  "subStep": "15.1 Learn / BFS / DFS",
+  "problemCount": 5,
+  "plannedWeek": 22,
+  "added": false
+ },
+ {
+  "id": "s15.2",
+  "step": 15,
+  "section": "Graphs",
+  "subStep": "15.2 Problems on BFS & DFS",
+  "problemCount": 13,
+  "plannedWeek": 22,
+  "added": false
+ },
+ {
+  "id": "s15.3",
+  "step": 15,
+  "section": "Graphs",
+  "subStep": "15.3 Topological sort",
+  "problemCount": 7,
+  "plannedWeek": 23,
+  "added": false
+ },
+ {
+  "id": "s15.4",
+  "step": 15,
+  "section": "Graphs",
+  "subStep": "15.4 Shortest path algorithms",
+  "problemCount": 13,
+  "plannedWeek": 23,
+  "added": false
+ },
+ {
+  "id": "s15.5",
+  "step": 15,
+  "section": "Graphs",
+  "subStep": "15.5 MST / disjoint set",
+  "problemCount": 9,
+  "plannedWeek": 24,
+  "added": false
+ },
+ {
+  "id": "s15.6",
+  "step": 15,
+  "section": "Graphs",
+  "subStep": "15.6 Other algorithms",
+  "problemCount": 7,
+  "plannedWeek": 24,
+  "added": false
+ },
+ {
+  "id": "s16.1",
+  "step": 16,
+  "section": "Dynamic Programming",
+  "subStep": "16.1 Intro to DP",
+  "problemCount": 1,
+  "plannedWeek": 25,
+  "added": false
+ },
+ {
+  "id": "s16.2",
+  "step": 16,
+  "section": "Dynamic Programming",
+  "subStep": "16.2 1D DP",
+  "problemCount": 5,
+  "plannedWeek": 25,
+  "added": false
+ },
+ {
+  "id": "s16.3",
+  "step": 16,
+  "section": "Dynamic Programming",
+  "subStep": "16.3 2D / 3D DP and grids",
+  "problemCount": 7,
+  "plannedWeek": 25,
+  "added": false
+ },
+ {
+  "id": "s16.4",
+  "step": 16,
+  "section": "Dynamic Programming",
+  "subStep": "16.4 DP on subsequences",
+  "problemCount": 10,
+  "plannedWeek": 26,
+  "added": false
+ },
+ {
+  "id": "s16.5",
+  "step": 16,
+  "section": "Dynamic Programming",
+  "subStep": "16.5 DP on strings",
+  "problemCount": 10,
+  "plannedWeek": 26,
+  "added": false
+ },
+ {
+  "id": "s16.6",
+  "step": 16,
+  "section": "Dynamic Programming",
+  "subStep": "16.6 DP on stocks",
+  "problemCount": 6,
+  "plannedWeek": 27,
+  "added": false
+ },
+ {
+  "id": "s16.7",
+  "step": 16,
+  "section": "Dynamic Programming",
+  "subStep": "16.7 DP on LIS",
+  "problemCount": 7,
+  "plannedWeek": 27,
+  "added": false
+ },
+ {
+  "id": "s16.8",
+  "step": 16,
+  "section": "Dynamic Programming",
+  "subStep": "16.8 Partition DP / MCM",
+  "problemCount": 8,
+  "plannedWeek": 28,
+  "added": false
+ },
+ {
+  "id": "s16.9",
+  "step": 16,
+  "section": "Dynamic Programming",
+  "subStep": "16.9 DP on squares / trees",
+  "problemCount": 3,
+  "plannedWeek": 28,
+  "added": false
+ },
+ {
+  "id": "s17.1",
+  "step": 17,
+  "section": "Tries",
+  "subStep": "17.1 Theory",
+  "problemCount": 1,
+  "plannedWeek": 29,
+  "added": false
+ },
+ {
+  "id": "s17.2",
+  "step": 17,
+  "section": "Tries",
+  "subStep": "17.2 Problems",
+  "problemCount": 6,
+  "plannedWeek": 29,
+  "added": false
+ },
+ {
+  "id": "s18.1",
+  "step": 18,
+  "section": "Strings (advanced)",
+  "subStep": "18.1 Hard problems, KMP, Z-function",
+  "problemCount": 9,
+  "plannedWeek": 29,
+  "added": false
+ },
+ {
+  "id": "x-segment-tree-fenwick-tre",
+  "step": null,
+  "section": "ADDED - not in A2Z",
+  "subStep": "Segment tree & Fenwick tree",
+  "problemCount": 5,
+  "plannedWeek": 29,
+  "added": true
+ },
+ {
+  "id": "x-lld-oop-design-round",
+  "step": null,
+  "section": "ADDED - not in A2Z",
+  "subStep": "LLD / OOP design round",
+  "problemCount": 0,
+  "plannedWeek": 21,
+  "added": true
+ },
+ {
+  "id": "x-sql-as-an-interview-roun",
+  "step": null,
+  "section": "ADDED - not in A2Z",
+  "subStep": "SQL as an interview round",
+  "problemCount": 0,
+  "plannedWeek": 14,
+  "added": true
+ }
+];

@@ -1,0 +1,544 @@
+// GENERATED from the dsa-tracker.xlsx Course Checklist sheet — do not edit by hand.
+window.SEED = window.SEED || {};
+window.SEED.courses = {
+ "note": "React course lists DevTinder UI as bonus - identical to Node S2 Ep 15-19, scheduled once in wk 19",
+ "items": [
+  {
+   "id": "b01",
+   "course": "NAMASTE REACT + NAMASTE NODE - tick 'Watched' only after you have also built along. Watching alone does not count.",
+   "plannedWeek": 0
+  },
+  {
+   "id": "r01",
+   "course": "React",
+   "section": "Namaste React Web Series",
+   "episode": "Important Guidelines - read first",
+   "plannedWeek": 9
+  },
+  {
+   "id": "r02",
+   "course": "React",
+   "section": "Namaste React Web Series",
+   "episode": "Ep 01 | Inception",
+   "plannedWeek": 9
+  },
+  {
+   "id": "r03",
+   "course": "React",
+   "section": "Namaste React Web Series",
+   "episode": "Ep 02 | Igniting our App",
+   "plannedWeek": 9
+  },
+  {
+   "id": "r04",
+   "course": "React",
+   "section": "Namaste React Web Series",
+   "episode": "Ep 03 | Laying the foundation",
+   "plannedWeek": 9
+  },
+  {
+   "id": "r05",
+   "course": "React",
+   "section": "Namaste React Web Series",
+   "episode": "Ep 04 | Talk is Cheap, Show Me the Code",
+   "plannedWeek": 9
+  },
+  {
+   "id": "r06",
+   "course": "React",
+   "section": "Namaste React Web Series",
+   "episode": "Swiggy Dummy Data API documentation",
+   "plannedWeek": 9
+  },
+  {
+   "id": "r07",
+   "course": "React",
+   "section": "Namaste React Web Series",
+   "episode": "Ep 05 | Let's Get Hooked",
+   "plannedWeek": 10
+  },
+  {
+   "id": "r08",
+   "course": "React",
+   "section": "Namaste React Web Series",
+   "episode": "Ep 06 | Exploring the World",
+   "plannedWeek": 10
+  },
+  {
+   "id": "r09",
+   "course": "React",
+   "section": "Namaste React Web Series",
+   "episode": "Ep 6.1 | Swiggy API issue resolved",
+   "plannedWeek": 10
+  },
+  {
+   "id": "r10",
+   "course": "React",
+   "section": "Namaste React Web Series",
+   "episode": "Ep 6.2 | CORS plugin issue solved",
+   "plannedWeek": 10
+  },
+  {
+   "id": "r11",
+   "course": "React",
+   "section": "Namaste React Web Series",
+   "episode": "Ep 07 | Finding the Path",
+   "plannedWeek": 10
+  },
+  {
+   "id": "r12",
+   "course": "React",
+   "section": "Namaste React Web Series",
+   "episode": "Ep 08 | Let's Get Classy",
+   "plannedWeek": 11
+  },
+  {
+   "id": "r13",
+   "course": "React",
+   "section": "Namaste React Web Series",
+   "episode": "Ep 09 | Optimizing our App",
+   "plannedWeek": 11
+  },
+  {
+   "id": "r14",
+   "course": "React",
+   "section": "Namaste React Web Series",
+   "episode": "Ep 10 | Jo Dikhta Hai, Vo Bikta Hai",
+   "plannedWeek": 11
+  },
+  {
+   "id": "r15",
+   "course": "React",
+   "section": "Namaste React Web Series",
+   "episode": "Ep 11 | Data is the New Oil",
+   "plannedWeek": 12
+  },
+  {
+   "id": "r16",
+   "course": "React",
+   "section": "Namaste React Web Series",
+   "episode": "Ep 12 | Let's Build Our Store",
+   "plannedWeek": 12
+  },
+  {
+   "id": "r17",
+   "course": "React",
+   "section": "Namaste React Web Series",
+   "episode": "Ep 13 | Time for Test",
+   "plannedWeek": 12
+  },
+  {
+   "id": "r18",
+   "course": "React",
+   "section": "Bonus",
+   "episode": "useMemo, useCallback, useRef hooks",
+   "plannedWeek": 12
+  },
+  {
+   "id": "r19",
+   "course": "React",
+   "section": "Namaste React Web Series",
+   "episode": "Ep 14 | NetflixGPT - The Beginning",
+   "plannedWeek": 13
+  },
+  {
+   "id": "r20",
+   "course": "React",
+   "section": "Namaste React Web Series",
+   "episode": "Ep 15 | NetflixGPT - Building the Core",
+   "plannedWeek": 13
+  },
+  {
+   "id": "r21",
+   "course": "React",
+   "section": "Namaste React Web Series",
+   "episode": "Ep 16 | NetflixGPT - Wrapping Up",
+   "plannedWeek": 13
+  },
+  {
+   "id": "r22",
+   "course": "React",
+   "section": "Bonus",
+   "episode": "Machine Coding Interview && Building YouTube",
+   "plannedWeek": 14
+  },
+  {
+   "id": "r23",
+   "course": "React",
+   "section": "Bonus",
+   "episode": "Advance Features in YouTube Project",
+   "plannedWeek": 14
+  },
+  {
+   "id": "r24",
+   "course": "React",
+   "section": "Bonus",
+   "episode": "Wrapping up YouTube Project",
+   "plannedWeek": 14
+  },
+  {
+   "id": "n01",
+   "course": "Node",
+   "section": "Season 1",
+   "episode": "Ep 00 | Welcome to Namaste Node.js",
+   "plannedWeek": 15
+  },
+  {
+   "id": "n02",
+   "course": "Node",
+   "section": "Season 1",
+   "episode": "Ep 01 | Introduction to Node.js",
+   "plannedWeek": 15
+  },
+  {
+   "id": "n03",
+   "course": "Node",
+   "section": "Season 1",
+   "episode": "Ep 02 | JS on Server",
+   "plannedWeek": 15
+  },
+  {
+   "id": "n04",
+   "course": "Node",
+   "section": "Season 1",
+   "episode": "Ep 03 | Let's write code",
+   "plannedWeek": 15
+  },
+  {
+   "id": "n05",
+   "course": "Node",
+   "section": "Season 1",
+   "episode": "Ep 04 | module.export & require",
+   "plannedWeek": 15
+  },
+  {
+   "id": "n06",
+   "course": "Node",
+   "section": "Season 1",
+   "episode": "Ep 05 | Diving into the Node.js github repo",
+   "plannedWeek": 15
+  },
+  {
+   "id": "n07",
+   "course": "Node",
+   "section": "Season 1",
+   "episode": "Ep 06 | libuv & async IO",
+   "plannedWeek": 15
+  },
+  {
+   "id": "n08",
+   "course": "Node",
+   "section": "Season 1",
+   "episode": "Ep 07 | sync, async, setTimeoutZero",
+   "plannedWeek": 15
+  },
+  {
+   "id": "n09",
+   "course": "Node",
+   "section": "Season 1",
+   "episode": "Ep 08 | Deep dive into v8 JS Engine",
+   "plannedWeek": 16
+  },
+  {
+   "id": "n10",
+   "course": "Node",
+   "section": "Season 1",
+   "episode": "Ep 09 | libuv & Event Loop",
+   "plannedWeek": 16
+  },
+  {
+   "id": "n11",
+   "course": "Node",
+   "section": "Season 1",
+   "episode": "Ep 10 | Thread pool in libuv",
+   "plannedWeek": 16
+  },
+  {
+   "id": "n12",
+   "course": "Node",
+   "section": "Season 1",
+   "episode": "Ep 11 | Creating a Server",
+   "plannedWeek": 16
+  },
+  {
+   "id": "n13",
+   "course": "Node",
+   "section": "Season 1",
+   "episode": "Ep 12 | Databases - SQL & NoSQL",
+   "plannedWeek": 16
+  },
+  {
+   "id": "n14",
+   "course": "Node",
+   "section": "Season 1",
+   "episode": "Ep 13 | Creating a database & mongodb",
+   "plannedWeek": 16
+  },
+  {
+   "id": "n15",
+   "course": "Node",
+   "section": "Season 2",
+   "episode": "Ep 00 | Introduction to Project",
+   "plannedWeek": 17
+  },
+  {
+   "id": "n16",
+   "course": "Node",
+   "section": "Season 2",
+   "episode": "Ep 01 | Microservices vs Monolith",
+   "plannedWeek": 17
+  },
+  {
+   "id": "n17",
+   "course": "Node",
+   "section": "Season 2",
+   "episode": "Ep 02 | Features, HLD, LLD & Planning",
+   "plannedWeek": 17
+  },
+  {
+   "id": "n18",
+   "course": "Node",
+   "section": "Season 2",
+   "episode": "Ep 03 | Creating our Express Server",
+   "plannedWeek": 17
+  },
+  {
+   "id": "n19",
+   "course": "Node",
+   "section": "Season 2",
+   "episode": "Ep 04 | Routing and Request Handlers",
+   "plannedWeek": 17
+  },
+  {
+   "id": "n20",
+   "course": "Node",
+   "section": "Season 2",
+   "episode": "Ep 05 | Middlewares & Error Handlers",
+   "plannedWeek": 17
+  },
+  {
+   "id": "n21",
+   "course": "Node",
+   "section": "Season 2",
+   "episode": "Ep 06 | Database, Schema & Models | Mongoose",
+   "plannedWeek": 17
+  },
+  {
+   "id": "n22",
+   "course": "Node",
+   "section": "Season 2",
+   "episode": "Ep 07 | Diving into the APIs",
+   "plannedWeek": 17
+  },
+  {
+   "id": "n23",
+   "course": "Node",
+   "section": "Season 2",
+   "episode": "Ep 08 | Data Sanitization & Schema Validations",
+   "plannedWeek": 18
+  },
+  {
+   "id": "n24",
+   "course": "Node",
+   "section": "Season 2",
+   "episode": "Ep 09 | Encrypting Passwords",
+   "plannedWeek": 18
+  },
+  {
+   "id": "n25",
+   "course": "Node",
+   "section": "Season 2",
+   "episode": "Ep 10 | Authentication, JWT & Cookies",
+   "plannedWeek": 18
+  },
+  {
+   "id": "n26",
+   "course": "Node",
+   "section": "Season 2",
+   "episode": "Ep 11 | APIs and express Router",
+   "plannedWeek": 18
+  },
+  {
+   "id": "n27",
+   "course": "Node",
+   "section": "Season 2",
+   "episode": "Ep 12 | Logical DB Query & Compound Indexes",
+   "plannedWeek": 18
+  },
+  {
+   "id": "n28",
+   "course": "Node",
+   "section": "Season 2",
+   "episode": "Ep 13 | ref, Populate & writing APIs",
+   "plannedWeek": 18
+  },
+  {
+   "id": "n29",
+   "course": "Node",
+   "section": "Season 2",
+   "episode": "Ep 14 | Building Feed API & Pagination",
+   "plannedWeek": 18
+  },
+  {
+   "id": "n30",
+   "course": "Node",
+   "section": "Season 2",
+   "episode": "DevTinder Project Github Repos",
+   "plannedWeek": 19
+  },
+  {
+   "id": "n31",
+   "course": "Node",
+   "section": "Season 2",
+   "episode": "Ep 15 | DevTinder UI - Part 1",
+   "plannedWeek": 19
+  },
+  {
+   "id": "n32",
+   "course": "Node",
+   "section": "Season 2",
+   "episode": "Ep 16 | DevTinder UI - Part 2",
+   "plannedWeek": 19
+  },
+  {
+   "id": "n33",
+   "course": "Node",
+   "section": "Season 2",
+   "episode": "Ep 17 | DevTinder UI - Part 3",
+   "plannedWeek": 19
+  },
+  {
+   "id": "n34",
+   "course": "Node",
+   "section": "Season 2",
+   "episode": "Ep 18 | DevTinder UI - Part 4",
+   "plannedWeek": 19
+  },
+  {
+   "id": "n35",
+   "course": "Node",
+   "section": "Season 2",
+   "episode": "Ep 19 | DevTinder UI - Part 5",
+   "plannedWeek": 19
+  },
+  {
+   "id": "n36",
+   "course": "Node",
+   "section": "Season 3",
+   "episode": "Ep 01 | Launching AWS Instance, deploy frontend",
+   "plannedWeek": 20
+  },
+  {
+   "id": "n37",
+   "course": "Node",
+   "section": "Season 3",
+   "episode": "Ep 02 | Nginx & Backend Node App Deployment",
+   "plannedWeek": 20
+  },
+  {
+   "id": "n38",
+   "course": "Node",
+   "section": "Season 3",
+   "episode": "Updating nginx config",
+   "plannedWeek": 20
+  },
+  {
+   "id": "n39",
+   "course": "Node",
+   "section": "Season 3",
+   "episode": "Ep 03 | Adding a Custom Domain Name",
+   "plannedWeek": 20
+  },
+  {
+   "id": "n40",
+   "course": "Node",
+   "section": "Season 3",
+   "episode": "Ep 04 | Sending Emails using Amazon SES",
+   "plannedWeek": 20
+  },
+  {
+   "id": "n41",
+   "course": "Node",
+   "section": "Season 3",
+   "episode": "Ep 05 | Credentials Safe Using dotenv",
+   "plannedWeek": 20
+  },
+  {
+   "id": "n42",
+   "course": "Node",
+   "section": "Season 3",
+   "episode": "Ep 06 | Scheduling Cron Jobs",
+   "plannedWeek": 20
+  },
+  {
+   "id": "n43",
+   "course": "Node",
+   "section": "Season 3",
+   "episode": "Ep 07 | Payment Gateway ft. Razorpay",
+   "plannedWeek": 20
+  },
+  {
+   "id": "n44",
+   "course": "Node",
+   "section": "Season 3",
+   "episode": "Ep 08 | Web Sockets & socket.io",
+   "plannedWeek": 20
+  },
+  {
+   "id": "n45",
+   "course": "Node",
+   "section": "Season 3",
+   "episode": "Ep 09 | Building Real-time Live Chat Feature",
+   "plannedWeek": 20
+  },
+  {
+   "id": "b01",
+   "course": "Both",
+   "section": "Bonus",
+   "episode": "Resume Masterclass",
+   "plannedWeek": 15
+  },
+  {
+   "id": "b02",
+   "course": "Both",
+   "section": "Bonus",
+   "episode": "LinkedIn Masterclass",
+   "plannedWeek": 16
+  },
+  {
+   "id": "b03",
+   "course": "Both",
+   "section": "Bonus",
+   "episode": "Personal Branding Masterclass",
+   "plannedWeek": 17
+  },
+  {
+   "id": "b04",
+   "course": "Both",
+   "section": "Bonus",
+   "episode": "Salary Negotiation Masterclass",
+   "plannedWeek": 20
+  },
+  {
+   "id": "b05",
+   "course": "Both",
+   "section": "Bonus",
+   "episode": "Top Node.js Interview Questions (PDF)",
+   "plannedWeek": 21
+  },
+  {
+   "id": "b06",
+   "course": "Both",
+   "section": "Bonus",
+   "episode": "Top React Interview Questions (PDF)",
+   "plannedWeek": 21
+  },
+  {
+   "id": "b07",
+   "course": "Both",
+   "section": "Bonus",
+   "episode": "Top JavaScript Interview Questions (PDF)",
+   "plannedWeek": 21
+  }
+ ]
+};

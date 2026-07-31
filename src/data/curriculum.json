@@ -1,0 +1,1518 @@
+{
+ "phases": [
+  {
+   "p": 1,
+   "title": "Rebuild the foundation",
+   "when": "3 Aug – 30 Aug 2026"
+  },
+  {
+   "p": 2,
+   "title": "Arrays & binary search",
+   "when": "31 Aug – 27 Sep 2026"
+  },
+  {
+   "p": 3,
+   "title": "Pointers & recursion",
+   "when": "28 Sep – 25 Oct 2026"
+  },
+  {
+   "p": 4,
+   "title": "Stacks, windows, bits",
+   "when": "26 Oct – 22 Nov 2026"
+  },
+  {
+   "p": 5,
+   "title": "Heaps, greedy, trees",
+   "when": "23 Nov – 20 Dec 2026"
+  },
+  {
+   "p": 6,
+   "title": "BST & graphs",
+   "when": "21 Dec 2026 – 17 Jan 2027"
+  },
+  {
+   "p": 7,
+   "title": "Dynamic programming",
+   "when": "18 Jan – 14 Feb 2027"
+  },
+  {
+   "p": 8,
+   "title": "Sprint & interviews",
+   "when": "15 Feb – 14 Mar 2027"
+  }
+ ],
+ "weeks": [
+  {
+   "n": 1,
+   "ph": 1,
+   "dates": "3 – 9 Aug 2026",
+   "step": "Striver Step 1.1–1.2",
+   "dsa": "Python refresher + Big-O",
+   "dev": "HTML — structure & semantics",
+   "goal": "Get your hands back on Python, and learn to price an algorithm before you write it.",
+   "target": 16,
+   "d": [
+    [
+     "Setup: VS Code, Python 3.12, LeetCode + GFG accounts. Variables, I/O, f-strings, type casting.",
+     "Sum of first N, reverse a number, count digits, palindrome number, Armstrong number.",
+     "What HTML actually is. Document structure, head vs body, semantic tags: header, nav, main, section, article, footer."
+    ],
+    [
+     "Conditionals, while vs for, range(), nested loops, break/continue.",
+     "Striver pattern problems 1–8 (rectangle, right triangle, inverted triangle, pyramid).",
+     "Text elements, lists, links, images. Attributes, alt text, absolute vs relative paths."
+    ],
+    [
+     "Functions: parameters, defaults, *args/**kwargs, return vs print, local vs global scope.",
+     "Striver patterns 9–15. Then: prime check, GCD by Euclid, LCM.",
+     "Forms: input types, labels, select, textarea, button. Tables. Why semantics matter for accessibility."
+    ],
+    [
+     "Big-O: how to count operations. O(1), O(log n), O(n), O(n log n), O(n²), O(2ⁿ). Best/avg/worst.",
+     "No new problems today. Go back through every problem you've solved and write its time and space complexity.",
+     "Build a semantic CV page from scratch — no CSS at all. Just correct structure."
+    ],
+    [
+     "Space complexity, auxiliary vs total. Recursion stack cost. Python traps: list.insert(0,x) is O(n), 'in' on a list is O(n).",
+     "Striver patterns 16–22. Then trailing zeroes in factorial, digit sum, count of digits without loop.",
+     "Forms deep-dive: validation attributes, fieldset, accessibility. Add a contact form to the CV page."
+    ],
+    [
+     "Lists: indexing, slicing, mutation, aliasing vs copy vs deepcopy, list comprehensions.",
+     "Reverse an array in place, find min and max, second largest without sorting, left rotate by one.",
+     "Meta tags, favicon, Open Graph. Validate your page with the W3C validator and fix every warning."
+    ]
+   ],
+   "sun": [
+    "Re-solve the 3 patterns you found hardest, from a blank file, no reference. Then write a Big-O cheat sheet in your own words — one page, no copying.",
+    "Core CS: what happens when you run a Python file — interpreter, bytecode, memory. Set up your notes repo on GitHub."
+   ]
+  },
+  {
+   "n": 2,
+   "ph": 1,
+   "dates": "10 – 16 Aug 2026",
+   "step": "Striver Step 1.3–1.6",
+   "dsa": "Python data structures + maths + hashing",
+   "dev": "CSS fundamentals",
+   "goal": "Learn the Python equivalent of C++ STL. Hashing is the single highest-return tool you'll pick up all year.",
+   "target": 18,
+   "d": [
+    [
+     "Dict and set internals: how hashing gives O(1) average lookup, and when it degrades to O(n).",
+     "Frequency count of an array, highest and lowest frequency element, count distinct elements.",
+     "The cascade, specificity, inheritance. Selectors: type, class, id, descendant, pseudo-class."
+    ],
+    [
+     "Tuples, immutability, strings as sequences. sorted() with key=, lambda, reverse=.",
+     "Sort a list of tuples by second element, valid anagram, sort characters by frequency.",
+     "The box model: content, padding, border, margin. box-sizing: border-box and why everyone sets it."
+    ],
+    [
+     "collections: Counter, defaultdict, deque, OrderedDict. heapq basics. This is your STL.",
+     "Rewrite Monday's and Tuesday's problems using Counter and defaultdict. Compare line counts.",
+     "Flexbox properly: flex-direction, justify-content, align-items, gap, flex-grow/shrink/basis."
+    ],
+    [
+     "Basic maths: extracting digits, finding divisors in O(√n), prime check, Sieve of Eratosthenes.",
+     "Count digits, print all divisors, check prime, sieve up to 10⁶, GCD by Euclid.",
+     "Flexbox practice: navbar, card row, centred hero. Build three layouts from scratch."
+    ],
+    [
+     "Recursion: the call stack, base case, recursion tree. Python's recursion limit and how to raise it.",
+     "Print 1 to N, print N to 1, sum of first N, factorial, reverse an array recursively.",
+     "Typography and colour: font stacks, web fonts, line-height, letter-spacing, rem vs px vs em."
+    ],
+    [
+     "Parameterised vs functional recursion. Multiple recursive calls and why Fibonacci is exponential.",
+     "Check palindrome recursively, Fibonacci, power(x, n) in O(log n) using fast exponentiation.",
+     "Style your CV page fully. No frameworks. Make deliberate typography choices."
+    ]
+   ],
+   "sun": [
+    "Re-solve four hashing problems cold. Draw the recursion tree for factorial(5) and fib(5) on paper by hand — count the calls.",
+    "Core CS: OOP in Python — class, object, __init__, self, instance vs class attributes."
+   ]
+  },
+  {
+   "n": 3,
+   "ph": 1,
+   "dates": "17 – 23 Aug 2026",
+   "step": "Striver Step 2 + 3.1",
+   "dsa": "Sorting algorithms + Arrays (easy)",
+   "dev": "CSS Grid, responsive, Tailwind",
+   "goal": "Implement every sort by hand once. You'll never implement them at work, but the reasoning transfers everywhere.",
+   "target": 18,
+   "d": [
+    [
+     "Selection, bubble, insertion sort. Why each is O(n²). Stability and what it means in practice.",
+     "Implement all three from scratch, no reference. Then trace each on [5,2,9,1] on paper.",
+     "CSS Grid: grid-template-columns, rows, fr units, gap, grid-area. Grid vs Flexbox — when each wins."
+    ],
+    [
+     "Merge sort: divide and conquer, the merge step, why O(n log n), why it needs O(n) extra space.",
+     "Implement merge sort. Then merge two sorted arrays without extra space.",
+     "Responsive design: media queries, mobile-first, fluid type with clamp(), container queries."
+    ],
+    [
+     "Quick sort: pivot choice, partition, O(n²) worst case. Why Python's sort() is Timsort.",
+     "Implement quick sort. Then find the kth smallest element using partition.",
+     "Tailwind: setup, utility classes, responsive prefixes, why utility-first. Rebuild one CV section in Tailwind."
+    ],
+    [
+     "Array traversal patterns. Scanning once vs twice. In-place vs extra space.",
+     "Largest element, second largest without sorting, check if array is sorted, remove duplicates from sorted array.",
+     "Tailwind continued: custom config, extending the theme, dark mode, @apply and when not to use it."
+    ],
+    [
+     "Rotation: the reversal algorithm and why it beats the naive approach.",
+     "Left rotate by one, left rotate by K places, move all zeroes to end, linear search.",
+     "Rebuild your whole CV page as a responsive portfolio in Tailwind. Mobile, tablet, desktop."
+    ],
+    [
+     "The XOR trick for finding a missing or single element. Union and intersection of sorted arrays.",
+     "Union of two sorted arrays, intersection, missing number, max consecutive ones, single number.",
+     "Polish: transitions, hover states, focus-visible rings, prefers-reduced-motion. Ship it."
+    ]
+   ],
+   "sun": [
+    "Re-implement merge sort and quick sort from a blank file. Time yourself. Under 10 minutes each is the target.",
+    "Core CS: OOP — inheritance, polymorphism, encapsulation. Write a small class hierarchy in Python."
+   ]
+  },
+  {
+   "n": 4,
+   "ph": 1,
+   "dates": "24 – 30 Aug 2026",
+   "step": "Striver Step 3.2",
+   "dsa": "Arrays (medium)",
+   "dev": "Git, GitHub, deployment",
+   "goal": "Kadane and prefix-sum-with-hashmap are two of the five patterns that carry the whole array section.",
+   "target": 16,
+   "d": [
+    [
+     "Two Sum: the brute force, the sorted two-pointer, the hashmap. Know all three and their trade-offs.",
+     "Two Sum (all three ways), sort an array of 0s, 1s and 2s (Dutch National Flag).",
+     "Git properly: init, add, commit, the staging area, .gitignore, writing commit messages that mean something."
+    ],
+    [
+     "Moore's voting algorithm — the intuition for why cancelling pairs works.",
+     "Majority element (> n/2), majority element (> n/3).",
+     "Branching: branch, merge, merge conflicts and how to resolve them without panicking. Feature-branch workflow."
+    ],
+    [
+     "Kadane's algorithm: the local-vs-global maximum idea. Prefix sums as a concept.",
+     "Maximum subarray sum, print the subarray itself, best time to buy and sell stock.",
+     "Remotes: push, pull, fetch, origin. Pull requests. Fork vs clone. Undo: reset, revert, stash."
+    ],
+    [
+     "The prefix-sum-plus-hashmap pattern. Why it handles negative numbers when sliding window can't.",
+     "Longest subarray with sum K (positives only), subarray sum equals K, longest subarray with sum K (with negatives).",
+     "Deploy the portfolio to GitHub Pages or Vercel. Custom domain if you have one. Get it genuinely live."
+    ],
+    [
+     "In-place rearrangement. Next permutation — the four-step algorithm.",
+     "Rearrange array by sign, next permutation, leaders in an array.",
+     "README that earns its keep: what it does, screenshot, stack, how to run locally, what you'd do next."
+    ],
+    [
+     "Matrix traversal as index arithmetic: rotation, spiral, in-place marking.",
+     "Rotate matrix by 90°, spiral traversal of a matrix, set matrix zeroes.",
+     "Clean up your GitHub profile: bio, pinned repos, profile README. Recruiters do look."
+    ]
+   ],
+   "sun": [
+    "Month 1 done. Re-solve Kadane and both prefix-sum problems cold. Update your Excel tracker and check your revision backlog is at zero.",
+    "Core CS: OOP — abstraction, dunder methods, when a class is the right tool and when a function is."
+   ]
+  },
+  {
+   "n": 5,
+   "ph": 2,
+   "dates": "31 Aug – 6 Sep 2026",
+   "step": "Striver Step 3.3 + intervals",
+   "dsa": "Arrays (hard) + intervals",
+   "dev": "JavaScript fundamentals I",
+   "goal": "Intervals aren't in Striver's sheet as their own step, but they're asked constantly. We add them here.",
+   "target": 16,
+   "d": [
+    [
+     "Pascal's triangle — the three distinct questions hidden in one topic (nth row, single element, full triangle).",
+     "Pascal's triangle: all three variants.",
+     "JS: let/const/var, types, coercion, ==  vs ===, truthy/falsy. The parts that bite you."
+    ],
+    [
+     "Longest consecutive sequence — why a set turns O(n log n) into O(n).",
+     "Longest consecutive sequence, longest subarray with sum K revisited.",
+     "Functions, arrow functions, this, scope, closures. Closures matter — take your time here."
+    ],
+    [
+     "The interval pattern: sort by start time, then sweep. Merge condition.",
+     "Merge overlapping intervals, insert interval.",
+     "Arrays and objects. Destructuring, spread, rest. map / filter / reduce / find / some / every."
+    ],
+    [
+     "Sweep line and non-overlapping selection. Sort-by-end for maximum count.",
+     "Non-overlapping intervals, meeting rooms, minimum platforms required.",
+     "Objects deeper: prototypes, classes, getters/setters. JSON parse and stringify."
+    ],
+    [
+     "Merge sort applications — counting inversions and reverse pairs during the merge.",
+     "Count inversions, reverse pairs.",
+     "Modules: import/export. Error handling: try/catch, throw, custom errors. Optional chaining."
+    ],
+    [
+     "Hard array tricks: XOR for repeat-and-missing, Kadane for products, two-pointer for k-sum.",
+     "Repeat and missing number, maximum product subarray, 3-Sum, 4-Sum.",
+     "Practice day: rewrite three of your Python array solutions in JavaScript. Same logic, different language."
+    ]
+   ],
+   "sun": [
+    "Re-solve 3-Sum and merge intervals cold. Both are pattern anchors you'll reuse a dozen times.",
+    "Core CS: month recap. Write blog-style notes on hashing and Kadane in your notes repo."
+   ]
+  },
+  {
+   "n": 6,
+   "ph": 2,
+   "dates": "7 – 13 Sep 2026",
+   "step": "Striver Step 4.1",
+   "dsa": "Binary search on 1D arrays",
+   "dev": "JavaScript II — the DOM",
+   "goal": "The binary search template must become muscle memory. Write it until you can't get it wrong.",
+   "target": 14,
+   "d": [
+    [
+     "The template: low, high, mid, and the loop invariant. Why mid = low + (high-low)//2.",
+     "Binary search in a sorted array, implement lower bound, implement upper bound.",
+     "The DOM: querySelector, traversal, createElement, appendChild, textContent vs innerHTML (and XSS)."
+    ],
+    [
+     "Boundary variants: search insert position, floor and ceiling. Off-by-one is the whole game here.",
+     "Search insert position, floor and ceil in a sorted array.",
+     "Events: addEventListener, the event object, bubbling and capturing, delegation, preventDefault."
+    ],
+    [
+     "First and last occurrence. Counting occurrences as two boundary searches.",
+     "First and last occurrence of a number, count occurrences of a number.",
+     "Forms and validation in JS. Building and updating lists in the DOM. Template literals for markup."
+    ],
+    [
+     "Rotated sorted arrays: identify which half is sorted, then decide where the target can be.",
+     "Search in rotated sorted array I, search in rotated sorted array II (with duplicates).",
+     "Build a to-do app: add, edit, delete, filter, persist to localStorage. Vanilla JS only."
+    ],
+    [
+     "Finding the rotation point. Minimum in a rotated array.",
+     "Minimum in rotated sorted array, find how many times an array is rotated.",
+     "Continue the to-do app: keyboard support, empty states, no-JS fallback. Make it actually good."
+    ],
+    [
+     "Binary search where the array isn't fully sorted: peaks and pairs.",
+     "Single element in a sorted array, find peak element.",
+     "Debugging: Chrome DevTools, breakpoints, the network tab, console methods beyond log."
+    ]
+   ],
+   "sun": [
+    "Write the binary search template from memory three separate times today. It has to be automatic before we hit binary-search-on-answers.",
+    "Core CS: DBMS — what a database is, tables, schemas, primary/foreign keys."
+   ]
+  },
+  {
+   "n": 7,
+   "ph": 2,
+   "dates": "14 – 20 Sep 2026",
+   "step": "Striver Step 4.2–4.3",
+   "dsa": "Binary search on answers + 2D",
+   "dev": "JavaScript III — async",
+   "goal": "Binary search on the answer space is the single most under-recognised pattern in interviews. Learn to spot it.",
+   "target": 15,
+   "d": [
+    [
+     "Searching the answer space, not the array. The shape: minimise the maximum, or maximise the minimum.",
+     "Square root of a number, Nth root of a number.",
+     "The event loop, call stack, task queue. Why JS is single-threaded but not blocking."
+    ],
+    [
+     "Designing the feasibility function: can we do it in X? Then binary search on X.",
+     "Koko eating bananas, minimum days to make M bouquets.",
+     "Callbacks → promises → async/await. Promise.all, Promise.race, error handling in async code."
+    ],
+    [
+     "More answer-space problems. Recognising the monotonic predicate.",
+     "Smallest divisor given a threshold, capacity to ship packages within D days.",
+     "fetch: GET, POST, headers, status codes, CORS. Working with a real public API."
+    ],
+    [
+     "Allocation and partition problems — the hardest common form of this pattern.",
+     "Aggressive cows, book allocation.",
+     "Build a weather or movie-search app against a real API. Loading states, error states, empty states."
+    ],
+    [
+     "Split array largest sum, painter's partition, and the median of two sorted arrays.",
+     "Split array largest sum, painter's partition, median of two sorted arrays (the hard one).",
+     "Continue the API app: debounced search, pagination, caching responses, abort controllers."
+    ],
+    [
+     "Treating a 2D matrix as a flattened 1D array. Staircase search for row-and-column sorted matrices.",
+     "Row with maximum 1s, search in a 2D matrix, search in a 2D matrix II, peak element in 2D.",
+     "ES6+ round-up: optional chaining, nullish coalescing, generators, Map and Set. Ship the API app."
+    ]
+   ],
+   "sun": [
+    "Re-solve Koko eating bananas and aggressive cows cold. They are the same problem in different clothes — make sure you can see that.",
+    "Core CS: DBMS — ER modelling, normalisation 1NF → 2NF → 3NF, when to denormalise."
+   ]
+  },
+  {
+   "n": 8,
+   "ph": 2,
+   "dates": "21 – 27 Sep 2026",
+   "step": "Striver Step 5",
+   "dsa": "Strings (basic + medium)",
+   "dev": "JavaScript project week",
+   "goal": "Python makes strings easy, which is a trap. Know the cost of what you're writing.",
+   "target": 15,
+   "d": [
+    [
+     "Python strings: immutability, why += in a loop is O(n²), join(), and the common methods.",
+     "Remove outermost parentheses, reverse words in a string.",
+     "Plan a real project — pick something you'd actually use. Wireframe it. Write a spec before coding."
+    ],
+    [
+     "Sorting and comparing strings. Custom comparators for string problems.",
+     "Largest odd number in a string, longest common prefix, isomorphic strings.",
+     "Build: structure, state model, core interactions. Vanilla JS, no framework."
+    ],
+    [
+     "Anagram and rotation checks. Grouping with a hashmap of sorted keys.",
+     "Valid anagram, rotate string, group anagrams.",
+     "Build: connect to an API or localStorage. Handle every failure case."
+    ],
+    [
+     "Frequency-driven string problems.",
+     "Sort characters by frequency, maximum nesting depth of parentheses.",
+     "Build: responsive layout, accessibility pass, keyboard navigation."
+    ],
+    [
+     "Roman numerals both ways. atoi — the string-to-integer edge cases interviewers love.",
+     "Roman to integer, integer to Roman, string to integer (atoi).",
+     "Build: polish, empty states, error messages that say what to do next."
+    ],
+    [
+     "Expand-around-centre for palindromes. Two pointers on strings.",
+     "Longest palindromic substring, sum of beauty of all substrings.",
+     "Deploy it. Write the README. Record a 60-second demo GIF for the repo."
+    ]
+   ],
+   "sun": [
+    "Month 2 done. Re-solve one problem each from arrays, binary search and strings, all cold. Check your revision backlog.",
+    "Core CS: DBMS — SQL basics. SELECT, WHERE, ORDER BY, GROUP BY, HAVING, the join types."
+   ]
+  },
+  {
+   "n": 9,
+   "ph": 3,
+   "dates": "28 Sep – 4 Oct 2026",
+   "step": "Striver Step 6.1–6.2",
+   "dsa": "Linked lists — singly & doubly",
+   "dev": "Namaste React — Ep 01-04",
+   "goal": "Linked list problems are pure pointer discipline. Draw the boxes and arrows on paper. Every single time.",
+   "target": 15,
+   "d": [
+    [
+     "The Node class, building a list from an array, traversal. Why a linked list over an array, and when not.",
+     "Build a linked list from an array, find its length, search for an element.",
+     "Ep 01 Inception. VS Code setup, hello world in HTML/JS, React via CDN links, createElement. Why React needs a build setup at all."
+    ],
+    [
+     "Insertion and deletion at head, tail, and the kth position. The dummy-head trick.",
+     "Delete head, delete tail, delete kth node, insert at head/tail/position.",
+     "Ep 02 Igniting our App. npm, package.json, Parcel, node_modules, .gitignore, browserslist, dev vs production builds."
+    ],
+    [
+     "Doubly linked lists: maintaining prev, and the edge cases that break naive code.",
+     "Build a DLL, insert and delete in a DLL, reverse a DLL.",
+     "Ep 03 Laying the foundation. JSX and how Babel transpiles it, React components, functional vs class, component composition."
+    ],
+    [
+     "The slow and fast pointer. Why it finds the middle, and why it detects cycles.",
+     "Middle of a linked list, detect a loop in a linked list.",
+     "Ep 03 assignments. Nested components, JSX expressions, props. Do every assignment — the whole course is built on them."
+    ],
+    [
+     "Floyd's cycle detection: proving where the two pointers meet, and finding the loop start.",
+     "Starting point of the loop, length of the loop.",
+     "Ep 04 Talk is Cheap, Show Me the Code. Start Namaste Food: plan the app, Header, Body, RestaurantCard, props."
+    ],
+    [
+     "Reversal, iterative and recursive. This one problem underpins ten others.",
+     "Reverse a linked list (both ways), check if a linked list is a palindrome.",
+     "Ep 04 continued. Map over the Swiggy dummy data API, keys and why they matter, optional chaining on API responses."
+    ]
+   ],
+   "sun": [
+    "Reverse a linked list from a blank file, iteratively and recursively, three times. This is the most-asked linked list question there is.",
+    "Core CS: DBMS — transactions and ACID. Isolation levels and the anomalies each one prevents."
+   ]
+  },
+  {
+   "n": 10,
+   "ph": 3,
+   "dates": "5 – 11 Oct 2026",
+   "step": "Striver Step 6.3–6.4",
+   "dsa": "Linked lists — medium & hard",
+   "dev": "Namaste React — Ep 05-07",
+   "goal": "Reverse-in-groups-of-K is the hardest pointer manipulation you'll be asked. Everything here builds to it.",
+   "target": 14,
+   "d": [
+    [
+     "Segregation and rearrangement by relinking, not by swapping values.",
+     "Odd-even linked list, segregate 0s, 1s and 2s in a linked list.",
+     "Ep 05 Let's Get Hooked. Folder structure, named vs default exports, useState, and why React re-renders."
+    ],
+    [
+     "The two-pointer gap technique for finding the nth node from the end.",
+     "Remove nth node from the end, delete the middle node.",
+     "Ep 05 assignments. Add search and filter to the restaurant list. Understand exactly what state triggers a render."
+    ],
+    [
+     "Merge sort on a linked list — why it's the right sort here and quicksort isn't.",
+     "Sort a linked list, sort 0s/1s/2s without swapping data.",
+     "Ep 06 Exploring the World. Monolith vs microservices, useEffect, real API calls, shimmer UI instead of a spinner."
+    ],
+    [
+     "Two-list problems: intersection, and adding numbers stored as lists.",
+     "Intersection of two linked lists, add two numbers represented as linked lists.",
+     "Ep 6.1 and 6.2 — the Swiggy API and CORS fixes. Then conditional rendering and the online-status pattern."
+    ],
+    [
+     "Reversing in groups of K — the hardest common linked list problem. Plus rotation.",
+     "Reverse a linked list in groups of K, rotate a linked list.",
+     "Ep 07 Finding the Path. React Router DOM, createBrowserRouter, children routes, Outlet, Link vs anchor tag."
+    ],
+    [
+     "Deep-copying a list with random pointers. Flattening a multi-level list.",
+     "Clone a linked list with random pointers, flatten a linked list.",
+     "Ep 07 continued. Dynamic routing with useParams, the restaurant menu page, errorElement and useRouteError."
+    ]
+   ],
+   "sun": [
+    "Re-solve reverse-in-groups-of-K cold. If you can write it without hesitation, linked lists are done.",
+    "Core CS: DBMS — indexing, B-trees, what makes a query slow, reading a query plan."
+   ]
+  },
+  {
+   "n": 11,
+   "ph": 3,
+   "dates": "12 – 18 Oct 2026",
+   "step": "Striver Step 7.1–7.2",
+   "dsa": "Recursion & subsequences",
+   "dev": "Namaste React — Ep 08-10",
+   "goal": "The take / not-take decision tree is the foundation of both backtracking and dynamic programming. Do not rush this week.",
+   "target": 14,
+   "d": [
+    [
+     "Recursion as a decision tree: at every element, take it or don't. Drawing the tree before coding.",
+     "Generate all subsequences of an array, print subsequences with sum K.",
+     "Ep 08 Let's Get Classy. Class components, constructor, props and state in classes. You will meet these in legacy code."
+    ],
+    [
+     "Return-type recursion (returns a value) vs void recursion (mutates shared state). When each fits.",
+     "Count subsequences with sum K, check if any subsequence sums to K (early exit).",
+     "Ep 08 continued. Lifecycle: componentDidMount, componentDidUpdate, componentWillUnmount — and how each maps onto useEffect."
+    ],
+    [
+     "Combination problems: reusing elements vs not, and how the recursive call index changes.",
+     "Combination Sum I, Combination Sum II (handling duplicates).",
+     "Ep 09 Optimizing our App. Custom hooks: useRestaurantMenu, useOnlineStatus. One responsibility per hook."
+    ],
+    [
+     "Subsets and duplicate handling — sorting first, then skipping equal siblings.",
+     "Subset sum I, subset sum II, subsets II.",
+     "Ep 09 continued. Code splitting, lazy loading, Suspense, chunking. Why bundle size is a real product concern."
+    ],
+    [
+     "Fixed-size combinations, and mapping digits to letters.",
+     "Combination Sum III, letter combinations of a phone number.",
+     "Ep 10 Jo Dikhta Hai, Vo Bikta Hai. Tailwind with Parcel, config, utility-first thinking."
+    ],
+    [
+     "Recursion on strings. Permutations without duplicates.",
+     "String permutations, merge sort written recursively from scratch.",
+     "Ep 10 continued. Style all of Namaste Food in Tailwind. Responsive breakpoints, mobile-first."
+    ]
+   ],
+   "sun": [
+    "Draw the full recursion tree for Combination Sum II on paper. Trace three branches by hand, including the duplicate-skip.",
+    "Core CS: DBMS wrap-up. Write and run 20 SQL queries against a sample database."
+   ]
+  },
+  {
+   "n": 12,
+   "ph": 3,
+   "dates": "19 – 25 Oct 2026",
+   "step": "Striver Step 7.3",
+   "dsa": "Backtracking",
+   "dev": "Namaste React — Ep 11-13",
+   "goal": "Backtracking is recursion plus an undo step. If you can write N-Queens from scratch, you own it.",
+   "target": 12,
+   "d": [
+    [
+     "Backtracking: the choose / explore / un-choose loop. Why restoring state matters.",
+     "Palindrome partitioning, word search in a grid.",
+     "Ep 11 Data is the New Oil. Higher-order components, controlled vs uncontrolled components."
+    ],
+    [
+     "Grid backtracking with a visited set and direction arrays.",
+     "Rat in a maze, N-Queens (find one solution).",
+     "Ep 11 continued. Lifting state up, props drilling and its real cost, Context API with useContext, React DevTools."
+    ],
+    [
+     "Constraint satisfaction and pruning — checking validity before recursing, not after.",
+     "N-Queens (print all solutions), M-colouring problem.",
+     "Ep 12 Let's Build Our Store. Redux Toolkit: store, slice, reducers, actions. Why Redux rather than Context."
+    ],
+    [
+     "Sudoku: the constraint checks and why pruning order changes the runtime by orders of magnitude.",
+     "Sudoku solver, word break (recursive form).",
+     "Ep 12 continued. useSelector, useDispatch, build the cart feature. Immutability and what RTK handles for you."
+    ],
+    [
+     "Building expressions recursively. Partitioning strings with operators.",
+     "Expression add operators, maximum score from removing substrings.",
+     "Ep 13 Time for Test. Jest setup with Parcel, React Testing Library, Babel config, jsdom."
+    ],
+    [
+     "Powerset via recursion, and finding the kth permutation without generating all of them.",
+     "Powerset, kth permutation sequence.",
+     "Ep 13 continued. Unit and integration tests, fireEvent, mocking fetch. Then the bonus episode: useMemo, useCallback, useRef."
+    ]
+   ],
+   "sun": [
+    "Write N-Queens from a blank file. If you can, backtracking is yours. If you can't, that's this Sunday's job.",
+    "Core CS: OS — processes vs threads, context switching, what the kernel actually does."
+   ]
+  },
+  {
+   "n": 13,
+   "ph": 4,
+   "dates": "26 Oct – 1 Nov 2026",
+   "step": "Striver Step 8 + number theory",
+   "dsa": "Bit manipulation + number theory",
+   "dev": "Namaste React — NetflixGPT (Ep 14-16)",
+   "goal": "A short, high-yield week. Bit tricks show up in DP-with-bitmask later, so this isn't optional.",
+   "target": 16,
+   "d": [
+    [
+     "Binary representation, two's complement. AND, OR, XOR, NOT, left and right shift.",
+     "Convert decimal to binary and back, swap two numbers using XOR.",
+     "Ep 14 NetflixGPT begins. Project setup, Firebase auth, login and signup form, validation with useRef."
+    ],
+    [
+     "Check, set, clear and toggle the ith bit. Removing the last set bit with n & (n-1).",
+     "Check the ith bit, set/clear/toggle the ith bit, remove the last set bit.",
+     "Ep 14 continued. Redux user slice, protected routes, sign out, updateProfile. Auth state as a single source of truth."
+    ],
+    [
+     "Counting set bits. Brian Kernighan's algorithm. Powers of two in one operation.",
+     "Count set bits, check if a number is a power of two, minimum bits to flip A to B.",
+     "Ep 15 Building the Core. TMDB API, a custom hook per movie list, the Redux movies slice."
+    ],
+    [
+     "XOR properties: x^x=0, x^0=x, and commutativity. The whole single-number family falls out of this.",
+     "Single number I, single number II, single number III.",
+     "Ep 15 continued. Main container, video background with trailer, secondary container, movie carousels."
+    ],
+    [
+     "Generating subsets with a bitmask. XOR over a range in O(1).",
+     "Power set using bit manipulation, XOR of numbers in a range L to R.",
+     "Ep 16 Wrapping Up. The GPT search feature, OpenAI API integration, .env files for secret keys."
+    ],
+    [
+     "Number theory: sieve-based prime factorisation, modular exponentiation, modular inverse basics.",
+     "Sieve of Eratosthenes, prime factors using a sieve, power(a,b,mod), count all divisors.",
+     "Ep 16 continued. Multi-language support, memoisation for expensive renders, deploy to Firebase or Vercel."
+    ]
+   ],
+   "sun": [
+    "Month 3 done. Re-solve one linked list problem and one backtracking problem cold. Audit your revision backlog seriously.",
+    "Core CS: OS — CPU scheduling: FCFS, SJF, round robin, priority. Compute waiting times by hand."
+   ]
+  },
+  {
+   "n": 14,
+   "ph": 4,
+   "dates": "2 – 8 Nov 2026",
+   "step": "Striver Step 9.1–9.2",
+   "dsa": "Stacks, queues & expressions",
+   "dev": "Namaste React — YouTube & machine coding",
+   "goal": "We use PostgreSQL rather than MongoDB. SQL is its own interview round at product companies. Mongo is not.",
+   "target": 14,
+   "d": [
+    [
+     "Stack and queue: LIFO and FIFO. Python list vs collections.deque, and why deque for queues.",
+     "Implement a stack using an array, implement a queue using an array.",
+     "Bonus: Machine Coding Interview. How the round actually runs, and how to break down a UI in the first ten minutes."
+    ],
+    [
+     "Implementing one structure with the other — the classic interview warm-up.",
+     "Stack using queues, queue using stacks.",
+     "Build Namaste YouTube: head, sidebar, video container, YouTube API, shimmer UI."
+    ],
+    [
+     "Stack and queue backed by a linked list. Comparing to array-backed versions.",
+     "Stack using a linked list, queue using a linked list.",
+     "Live search with autocomplete. Debouncing and caching API responses — the most-asked machine coding feature there is."
+    ],
+    [
+     "Balanced brackets. The theory of infix, prefix and postfix notation.",
+     "Valid parentheses, convert infix to postfix.",
+     "Nested comments. Recursive components, and why this specific question separates candidates."
+    ],
+    [
+     "The remaining notation conversions. Every one is a stack traversal with different rules.",
+     "Postfix to infix, prefix to infix, postfix to prefix.",
+     "Live chat with anonymous messages, and infinite scroll on the video feed."
+    ],
+    [
+     "Evaluating expressions with a stack. Operator precedence and associativity.",
+     "Evaluate postfix expression, prefix to postfix, infix to prefix.",
+     "Advanced features and wrap-up. Deploy, write the README, record a demo of the YouTube clone."
+    ]
+   ],
+   "sun": [
+    "Write infix-to-postfix from memory. It's a guaranteed question in Indian product-company and campus interviews.",
+    "Core CS: OS — deadlock (the four conditions), mutexes, semaphores, producer-consumer."
+   ]
+  },
+  {
+   "n": 15,
+   "ph": 4,
+   "dates": "9 – 15 Nov 2026",
+   "step": "Striver Step 9.3–9.4",
+   "dsa": "Monotonic stack",
+   "dev": "Namaste Node — Season 1 (Ep 00-07)",
+   "goal": "The monotonic stack turns O(n²) into O(n). Once you see the pattern, a dozen hard problems become routine.",
+   "target": 13,
+   "d": [
+    [
+     "The monotonic stack: maintaining increasing or decreasing order, and why each element is pushed and popped once.",
+     "Next greater element I, next greater element II (circular).",
+     "Ep 00 Welcome + Ep 01 Introduction to Node.js. What Node actually is, its history, and why JS on the server changed things."
+    ],
+    [
+     "Next and previous smaller element. Choosing the direction of the scan.",
+     "Next smaller element, number of next-greater-elements to the right.",
+     "Ep 02 JS on Server + Ep 03 Let's write code. V8, ECMAScript, and your first server-side JavaScript."
+    ],
+    [
+     "The contribution technique: for each element, how many subarrays is it the minimum of?",
+     "Sum of subarray minimums, sum of subarray ranges.",
+     "Ep 04 module.export & require. CommonJS vs ES modules, module scope, the IIFE wrapper, the five steps of require."
+    ],
+    [
+     "The histogram pattern — previous smaller and next smaller combined.",
+     "Largest rectangle in a histogram, maximal rectangle in a binary matrix.",
+     "Ep 05 Diving into the Node.js GitHub repo. Reading real source code — a skill worth more than the episode itself."
+    ],
+    [
+     "Trapping rain water: brute force, prefix arrays, then two pointers. Understand all three.",
+     "Trapping rainwater, asteroid collision.",
+     "Ep 06 libuv & async IO. Sync vs async, blocking vs non-blocking, and what libuv is actually doing underneath."
+    ],
+    [
+     "Stack-based greedy: removing digits, and the stock span problem. LRU cache design.",
+     "Stock span problem, remove K digits, LRU cache.",
+     "Ep 07 sync, async, setTimeoutZero. Call stack, callback queue, and why setTimeout(fn, 0) is not immediate."
+    ]
+   ],
+   "sun": [
+    "Largest rectangle in a histogram, cold. It appears constantly and it's the purest test of the monotonic stack idea.",
+    "Core CS: OS — memory management, paging, segmentation, virtual memory. Then the Resume Masterclass (course bonus) and a first draft."
+   ]
+  },
+  {
+   "n": 16,
+   "ph": 4,
+   "dates": "16 – 22 Nov 2026",
+   "step": "Striver Step 10",
+   "dsa": "Sliding window & two pointers",
+   "dev": "Namaste Node — Season 1 (Ep 08-13)",
+   "goal": "Four window shapes cover almost everything: fixed size, variable size, count-the-subarrays, and window-with-a-structure.",
+   "target": 12,
+   "d": [
+    [
+     "The variable-size window: expand right, shrink left while the condition breaks.",
+     "Longest substring without repeating characters.",
+     "Ep 08 Deep dive into the V8 engine. Parsing, Ignition, TurboFan, JIT compilation, garbage collection."
+    ],
+    [
+     "Windows with a counter of violations rather than a set.",
+     "Max consecutive ones III, fruit into baskets.",
+     "Ep 09 libuv & the Event Loop. The six phases: timers, pending callbacks, idle/prepare, poll, check, close."
+    ],
+    [
+     "At-most-K-distinct windows using a frequency map.",
+     "Longest substring with at most K distinct characters, number of substrings containing all three characters.",
+     "Ep 09 continued. process.nextTick vs promise microtasks vs setImmediate vs setTimeout. Learn this cold — it is the most-asked Node question."
+    ],
+    [
+     "The at-most trick: exactly(K) = atMost(K) − atMost(K−1). This converts hard counting into easy counting.",
+     "Binary subarrays with sum, count number of nice subarrays.",
+     "Ep 10 Thread pool in libuv. UV_THREADPOOL_SIZE, and which operations actually use the pool: fs, dns, crypto, zlib."
+    ],
+    [
+     "Windows where the condition needs the max frequency inside it.",
+     "Longest repeating character replacement, maximum points you can obtain from cards.",
+     "Ep 11 Creating a Server. The http module, sockets, TCP vs HTTP, handling req and res without Express."
+    ],
+    [
+     "Windows that need an auxiliary structure — a deque for max, a counter for coverage.",
+     "Minimum window substring, sliding window maximum.",
+     "Ep 12 SQL vs NoSQL + Ep 13 Creating a database with MongoDB. Atlas setup, Compass, CRUD, when each database type fits."
+    ]
+   ],
+   "sun": [
+    "Month 4 done. Re-solve minimum window substring cold. It combines hashing, two pointers and careful bookkeeping.",
+    "Core CS: OS wrap-up — 30 interview questions with written answers. Then the LinkedIn Masterclass and rewrite your profile."
+   ]
+  },
+  {
+   "n": 17,
+   "ph": 5,
+   "dates": "23 – 29 Nov 2026",
+   "step": "Striver Step 11",
+   "dsa": "Heaps & priority queues",
+   "dev": "Namaste Node — DevTinder API (Ep 00-07)",
+   "goal": "Python's heapq is a min-heap only. Learn the negation trick for max-heaps now, before you need it under pressure.",
+   "target": 14,
+   "d": [
+    [
+     "The heap property, sift-up and sift-down, why building a heap is O(n) not O(n log n).",
+     "Implement a min-heap and a max-heap from scratch, with push, pop and heapify.",
+     "S2 Ep 00 Introduction to Project + Ep 01 Microservices vs Monolith. Which to choose, with the real trade-offs."
+    ],
+    [
+     "Heap sort. Verifying the heap property. Python's heapq and the negation trick for max-heaps.",
+     "Heap sort, check if an array represents a min-heap, convert a min-heap to a max-heap.",
+     "Ep 02 Features, HLD & LLD planning. Do this one properly — it is directly reusable in your LLD interview round."
+    ],
+    [
+     "The top-K pattern: keep a heap of size K, not a heap of size N.",
+     "Kth largest element, kth smallest element, top K frequent elements.",
+     "Ep 03 Creating our Express Server. Init, listen, nodemon, and why route order matters."
+    ],
+    [
+     "Merging K sorted sequences with a heap of heads.",
+     "Merge K sorted arrays, merge K sorted linked lists.",
+     "Ep 04 Routing and Request Handlers. Route params, query strings, dynamic and regex routes."
+    ],
+    [
+     "Greedy scheduling with a heap — the pattern behind task and interval scheduling.",
+     "Task scheduler, hands of straights.",
+     "Ep 05 Middlewares & Error Handlers. app.use, next(), the error middleware signature, tracing the request flow."
+    ],
+    [
+     "Two heaps for a running median. Distance-based top-K.",
+     "Find median from a data stream, K closest points to origin, minimum operations to halve array sum.",
+     "Ep 06 Schema & Models with Mongoose + Ep 07 Diving into the APIs. Signup, login, your first CRUD endpoints."
+    ]
+   ],
+   "sun": [
+    "Implement a heap from scratch again, no reference. Then explain out loud why build-heap is O(n).",
+    "Core CS: CN — the OSI and TCP/IP models, and what lives at each layer. Then the Personal Branding Masterclass."
+   ]
+  },
+  {
+   "n": 18,
+   "ph": 5,
+   "dates": "30 Nov – 6 Dec 2026",
+   "step": "Striver Step 12",
+   "dsa": "Greedy algorithms",
+   "dev": "Namaste Node — auth & data (Ep 08-14)",
+   "goal": "The skill isn't writing greedy code — it's proving the greedy choice is safe. Practise the proof, not just the solution.",
+   "target": 13,
+   "d": [
+    [
+     "The exchange argument: why a local choice can be globally optimal, and the cases where it can't.",
+     "Assign cookies, fractional knapsack.",
+     "Ep 08 Data Sanitization & Schema Validations. The validator library, schema-level rules, custom validators."
+    ],
+    [
+     "Coin change: where greedy works, where it silently gives a wrong answer, and why DP is needed.",
+     "Minimum coins (greedy), lemonade change.",
+     "Ep 09 Encrypting Passwords. bcrypt, salt rounds, and why plaintext is never acceptable."
+    ],
+    [
+     "Interval scheduling: sort by end time. Proving why sorting by start time fails.",
+     "N meetings in one room, minimum platforms.",
+     "Ep 10 Authentication, JWT & Cookies. Signing and verifying tokens, httpOnly cookies, expiry, the auth middleware."
+    ],
+    [
+     "Deadline scheduling and sort-by-ratio greedy.",
+     "Job sequencing with deadlines, shortest job first.",
+     "Ep 11 APIs and the express Router. Router(), splitting routes into files, a project structure that scales."
+    ],
+    [
+     "The jump game family — tracking the furthest reachable index.",
+     "Jump game I, jump game II.",
+     "Ep 12 Logical DB Queries & Compound Indexes. $or and $and, index design, reading explain() output."
+    ],
+    [
+     "Harder greedy: candy distribution, and validating parentheses with a wildcard.",
+     "Candy, insert interval, valid parenthesis string.",
+     "Ep 13 ref & populate + Ep 14 Feed API with pagination. Relationships in MongoDB, skip and limit."
+    ]
+   ],
+   "sun": [
+    "For three greedy problems, write down in a sentence why the greedy choice is provably safe. If you can't, you learned the code and not the algorithm.",
+    "Core CS: CN — TCP vs UDP, the three-way handshake, DNS resolution, HTTP vs HTTPS. Then finish the resume: every bullet gets a number."
+   ]
+  },
+  {
+   "n": 19,
+   "ph": 5,
+   "dates": "7 – 13 Dec 2026",
+   "step": "Striver Step 13.1–13.2",
+   "dsa": "Binary trees — traversals & basics",
+   "dev": "Namaste Node — DevTinder UI (Ep 15-19)",
+   "goal": "Every tree problem is a traversal with something extra bolted on. Get the traversals into your fingers first.",
+   "target": 16,
+   "d": [
+    [
+     "Tree terminology, the Node class, and recursive inorder, preorder, postorder.",
+     "Build a tree, then inorder, preorder and postorder recursively.",
+     "DevTinder GitHub repos + Ep 15 UI Part 1. Project setup, Tailwind and DaisyUI, folder structure."
+    ],
+    [
+     "Iterative traversals with an explicit stack — including the awkward postorder cases.",
+     "Iterative preorder, iterative inorder, postorder with two stacks and with one.",
+     "Ep 16 UI Part 2. Login and signup UI, navbar, routing, connecting to your own API. CORS with credentials."
+    ],
+    [
+     "Level-order traversal and BFS on trees. Doing all three DFS traversals in a single pass.",
+     "Level order traversal, all three traversals in one traversal.",
+     "Ep 17 UI Part 3. Redux store, user slice, protected routes, persisting login across refreshes."
+    ],
+    [
+     "Height, balance and diameter. The pattern of returning two values up the recursion.",
+     "Height of a binary tree, check if balanced, diameter of a binary tree.",
+     "Ep 18 UI Part 4. The feed, connection requests, live data flowing from the backend you wrote."
+    ],
+    [
+     "Maximum path sum — the trickiest of the return-two-things problems. Tree comparison.",
+     "Maximum path sum, same tree, symmetric tree.",
+     "Ep 19 UI Part 5. Profile editing, polish, bug fixes, performance pass."
+    ],
+    [
+     "Views of a tree: left, right, top, bottom. All four are BFS with a bookkeeping twist.",
+     "Left view, right view, top view, bottom view, zigzag traversal.",
+     "Full-stack debugging day. Run frontend and backend together and fix every broken flow. This is the actual skill."
+    ]
+   ],
+   "sun": [
+    "Write all three iterative traversals from a blank file. Iterative postorder is the one people fumble.",
+    "Core CS: CN — routing, subnetting, load balancing, CDNs, caching. Then polish GitHub and send your first 10 applications."
+   ]
+  },
+  {
+   "n": 20,
+   "ph": 5,
+   "dates": "14 – 20 Dec 2026",
+   "step": "Striver Step 13.3",
+   "dsa": "Binary trees — medium & hard",
+   "dev": "Namaste Node — production (S3 Ep 01-09)",
+   "goal": "LCA and build-from-traversals are the two that come up most. Morris traversal is your O(1)-space party trick.",
+   "target": 15,
+   "d": [
+    [
+     "Boundary traversal and vertical order — careful bookkeeping more than clever algorithms.",
+     "Boundary traversal, vertical order traversal.",
+     "S3 Ep 01 Launching an AWS instance and deploying the frontend. EC2, SSH, key pairs, security groups."
+    ],
+    [
+     "Root-to-node paths, then lowest common ancestor. The bottom-up return trick.",
+     "Print root-to-node path, LCA of a binary tree.",
+     "Ep 02 Nginx & backend deployment, plus the nginx config update. Reverse proxy, pm2, ports."
+    ],
+    [
+     "Maximum width, children-sum property, and finding all nodes at distance K.",
+     "Maximum width of a binary tree, children sum property, all nodes at distance K.",
+     "Ep 03 Adding a custom domain. DNS records, the A record, SSL with certbot."
+    ],
+    [
+     "Time to burn a tree — converting a tree into a graph. Counting nodes in a complete tree in O(log²n).",
+     "Minimum time to burn a binary tree, count nodes in a complete binary tree.",
+     "Ep 04 Sending emails with Amazon SES + Ep 05 keeping credentials safe with dotenv."
+    ],
+    [
+     "Reconstructing a tree from two traversals. Why preorder plus inorder works but preorder plus postorder doesn't.",
+     "Construct a tree from preorder and inorder, from postorder and inorder.",
+     "Ep 06 Scheduling cron jobs + Ep 07 Razorpay payment integration. Webhooks and idempotency."
+    ],
+    [
+     "Serialize and deserialize. Morris traversal for O(1) space. Flattening a tree to a linked list.",
+     "Serialize and deserialize a binary tree, Morris inorder and preorder, flatten a tree to a linked list.",
+     "Ep 08 WebSockets & socket.io + Ep 09 the real-time live chat feature. Rooms, events, persisting messages."
+    ]
+   ],
+   "sun": [
+    "Month 5 done. LCA and construct-from-traversals, both cold. Full revision backlog audit — get it to zero before the graph section.",
+    "Core CS: CN wrap-up — 30 questions with written answers. Then the Salary Negotiation Masterclass and 15 more applications."
+   ]
+  },
+  {
+   "n": 21,
+   "ph": 6,
+   "dates": "21 – 27 Dec 2026",
+   "step": "Striver Step 14",
+   "dsa": "Binary search trees",
+   "dev": "Interview Q&A + machine coding",
+   "goal": "Every BST problem reduces to one fact: the inorder traversal is sorted. Keep coming back to that.",
+   "target": 14,
+   "d": [
+    [
+     "The BST property. Why search is O(log n) and why an unbalanced BST degrades to a linked list.",
+     "Search in a BST, find minimum and maximum in a BST.",
+     "Top Node.js Interview Questions (course PDF). Work through them and write your own answers — reading them does nothing."
+    ],
+    [
+     "Ceiling and floor in a BST. Insertion without recursion.",
+     "Ceil in a BST, floor in a BST, insert a node into a BST.",
+     "Top React Interview Questions (course PDF). 75 questions with explanations and examples."
+    ],
+    [
+     "Deletion — the three cases, and why the inorder successor is the right replacement.",
+     "Delete a node in a BST, kth smallest and kth largest in a BST.",
+     "Top JavaScript Interview Questions (course PDF). Closures, hoisting, the event loop, prototypes."
+    ],
+    [
+     "Validating a BST with min/max bounds. LCA in a BST is a two-line problem — know why.",
+     "Validate a BST, LCA in a BST.",
+     "Machine coding, timed: a star-rating component, then infinite scroll. 90 minutes each, no help."
+    ],
+    [
+     "Constructing a BST from preorder using bounds. Inorder successor and predecessor.",
+     "Construct a BST from preorder, inorder successor and predecessor.",
+     "Machine coding, timed: autocomplete with debounce, then a file-explorer tree."
+    ],
+    [
+     "The BST iterator (controlled inorder), and recovering a BST with two swapped nodes.",
+     "BST iterator, two sum in a BST, recover a BST, largest BST in a binary tree.",
+     "Portfolio site. Case studies for DevTinder, NetflixGPT, Namaste Food and the YouTube clone — case studies, not screenshots."
+    ]
+   ],
+   "sun": [
+    "Delete-node-in-a-BST, cold. Everyone gets the three cases wrong the first time — make sure your once has already happened.",
+    "Weekly retro. Applications, responses, follow-ups. Four projects and a deployed full-stack app behind you now."
+   ]
+  },
+  {
+   "n": 22,
+   "ph": 6,
+   "dates": "28 Dec 2026 – 3 Jan 2027",
+   "step": "Striver Step 15.1–15.2",
+   "dsa": "Graphs — BFS, DFS & problems",
+   "dev": "LLD — SOLID & patterns",
+   "goal": "Graphs are the biggest step in the sheet. BFS and DFS templates first — forty problems are built on them.",
+   "target": 15,
+   "d": [
+    [
+     "Graph types: directed, weighted, cyclic. Adjacency list vs matrix. Building graphs in Python with defaultdict.",
+     "Build an adjacency list, BFS traversal, DFS traversal.",
+     "Low-level design: why it is a separate round. Single Responsibility and Open/Closed with real examples."
+    ],
+    [
+     "Connected components: the outer loop plus visited array pattern that wraps almost every grid problem.",
+     "Number of provinces, number of islands, flood fill.",
+     "Liskov Substitution, Interface Segregation, Dependency Inversion. Refactor part of DevTinder using them."
+    ],
+    [
+     "Multi-source BFS — starting from every source at once instead of running BFS N times.",
+     "Rotten oranges, 0/1 matrix (distance to nearest zero).",
+     "Creational patterns: Factory, Abstract Factory, Builder, Singleton — and why Singleton is often a smell."
+    ],
+    [
+     "Cycle detection in undirected graphs, with BFS and with DFS. Handling the parent edge.",
+     "Detect a cycle in an undirected graph (both ways), surrounded regions.",
+     "Structural: Adapter, Decorator, Facade, Proxy. Behavioural: Strategy, Observer, Command."
+    ],
+    [
+     "Cycle detection in directed graphs — why you need a recursion-stack array, not just visited.",
+     "Detect a cycle in a directed graph, number of enclaves.",
+     "UML for interviews. Class diagrams and sequence diagrams, hand-drawn, fast."
+    ],
+    [
+     "Bipartite checking by two-colouring. The word ladder problems as shortest-path BFS.",
+     "Bipartite graph check, word ladder I, word ladder II.",
+     "Design a parking lot. Classes, relationships, then code the core. Time yourself: 45 minutes."
+    ]
+   ],
+   "sun": [
+    "Write BFS and DFS templates from memory. They are the base of forty problems — they need to be free.",
+    "Weekly retro: review applications, log responses, plan the week. Rest properly, it's the holidays."
+   ]
+  },
+  {
+   "n": 23,
+   "ph": 6,
+   "dates": "4 – 10 Jan 2027",
+   "step": "Striver Step 15.3–15.4",
+   "dsa": "Topological sort & shortest paths",
+   "dev": "LLD — design problems",
+   "goal": "Topological sort and Dijkstra. Two algorithms, roughly fifteen problems between them.",
+   "target": 13,
+   "d": [
+    [
+     "Topological sort by DFS, and Kahn's algorithm by BFS with in-degrees. Why it needs a DAG.",
+     "Topological sort (DFS), Kahn's algorithm (BFS).",
+     "Design an elevator system. State machines, request scheduling, edge cases."
+    ],
+    [
+     "Using topological sort to detect cycles in a directed graph. The course-schedule pattern.",
+     "Course schedule I, course schedule II, find eventual safe states.",
+     "Design Splitwise. Users, groups, expenses, and the settle-up algorithm."
+    ],
+    [
+     "Alien dictionary — building a graph from ordering constraints, then sorting it.",
+     "Alien dictionary.",
+     "Design a rate limiter — token bucket vs sliding window. Then a URL shortener."
+    ],
+    [
+     "Shortest path in unweighted graphs with BFS. Shortest path in a DAG using topological order.",
+     "Shortest path in an unweighted undirected graph, shortest path in a DAG.",
+     "Design a library management system, then a food delivery app. 45 minutes each, spoken aloud."
+    ],
+    [
+     "Dijkstra with a priority queue. Why it breaks on negative edges — be ready to explain this.",
+     "Dijkstra's algorithm, shortest path in a binary maze.",
+     "Design an LRU cache and a message queue. Both connect straight back to your DSA."
+    ],
+    [
+     "Dijkstra variants where the cost function isn't a simple sum.",
+     "Path with minimum effort, cheapest flights within K stops, network delay time.",
+     "Mock LLD interview. Have someone give you a prompt cold. 45 minutes, paper only."
+    ]
+   ],
+   "sun": [
+    "Dijkstra from a blank file. Then explain out loud, to nobody, why it fails on negative edges. If the explanation is shaky, the understanding is too.",
+    "Weekly retro: applications, responses, and a plan for January. All four projects fully polished by now."
+   ]
+  },
+  {
+   "n": 24,
+   "ph": 6,
+   "dates": "11 – 17 Jan 2027",
+   "step": "Striver Step 15.5–15.6",
+   "dsa": "MST, DSU & advanced graphs",
+   "dev": "SQL, MongoDB & DBMS drilling",
+   "goal": "DSU is fifteen lines of code that unlocks a dozen problems. Learn it properly, including path compression.",
+   "target": 13,
+   "d": [
+    [
+     "Bellman-Ford: relaxing V−1 times, and detecting negative cycles on the Vth pass.",
+     "Bellman-Ford algorithm, detect a negative cycle.",
+     "SQL drilling: 15 medium query problems. Joins, aggregates, grouping. LeetCode Database track."
+    ],
+    [
+     "Floyd-Warshall for all-pairs shortest paths. The three nested loops and why the k loop is outermost.",
+     "Floyd-Warshall algorithm, city with the smallest number of reachable neighbours.",
+     "SQL: 15 window-function problems. Running totals, rankings, top-N-per-group."
+    ],
+    [
+     "Disjoint Set Union: union by rank and by size, path compression, and the near-constant time result.",
+     "Implement DSU with both optimisations, number of provinces using DSU.",
+     "DBMS theory: normalisation, ACID, isolation levels, indexing. Written answers to 25 questions."
+    ],
+    [
+     "Minimum spanning trees: Prim's with a heap, Kruskal's with DSU. When you'd pick each.",
+     "Minimum spanning tree (Prim's), Kruskal's algorithm.",
+     "SQL: 15 hard problems. Correlated subqueries, self-joins, recursive CTEs."
+    ],
+    [
+     "DSU applications — the problems where the connectivity structure is the whole problem.",
+     "Number of operations to make the network connected, accounts merge, making a large island.",
+     "MongoDB aggregation pipeline: $match, $group, $lookup, $unwind. Indexing strategy in Mongo. Your project runs on this — expect questions."
+    ],
+    [
+     "Bridges and articulation points (Tarjan's), and strongly connected components (Kosaraju's).",
+     "Bridges in a graph, articulation points, Kosaraju's algorithm.",
+     "Mock database round. 45 minutes, live queries, spoken explanation."
+    ]
+   ],
+   "sun": [
+    "Month 6 done. Write DSU from a blank file — it's short, and it's worth ten problems. Full revision audit before DP starts.",
+    "Weekly retro: applications and interview pipeline. Follow up on anything older than 10 days."
+   ]
+  },
+  {
+   "n": 25,
+   "ph": 7,
+   "dates": "18 – 24 Jan 2027",
+   "step": "Striver Step 16.1-16.3",
+   "dsa": "DP — 1D and grids",
+   "dev": "OS & CN drilling",
+   "goal": "Striver's five-step method: recursion, memoise, tabulate, space-optimise. Apply it to every single problem. No shortcuts this month.",
+   "target": 13,
+   "d": [
+    [
+     "DP as recursion plus memory. The five steps: express in terms of the index, explore all choices, take best, memoise, tabulate.",
+     "Climbing stairs, frog jump. Write all four versions of each — recursive, memo, tabulation, space-optimised.",
+     "OS: processes, threads, scheduling, deadlock. 30 questions with written answers."
+    ],
+    [
+     "Applying the five steps end to end without help. This is the week's core skill.",
+     "Frog jump with K distances, maximum energy, house robber I, house robber II.",
+     "OS: memory management, paging, virtual memory, page replacement. 25 questions."
+    ],
+    [
+     "2D and grid DP: fixed start and end, movement constraints, direction of the tabulation loop.",
+     "Ninja's training, grid unique paths I, grid unique paths II (obstacles).",
+     "CN: OSI layers, TCP and UDP, HTTP, DNS, the TLS handshake. 30 questions."
+    ],
+    [
+     "Minimum path problems on grids and triangles.",
+     "Minimum path sum in a grid, minimum path sum in a triangle.",
+     "CN: routing, subnetting, load balancing, CDNs, caching. 25 questions."
+    ],
+    [
+     "Variable starting points, and 3D DP with two moving agents.",
+     "Maximum and minimum falling path sum, cherry pickup II.",
+     "OOP theory round: SOLID, patterns, composition vs inheritance, when each applies."
+    ],
+    [
+     "Consolidation: converting any memoised solution to tabulation mechanically.",
+     "Redo four of this week's problems in tabulated and space-optimised form, from scratch.",
+     "Mock CS-fundamentals round. Mixed OS, DBMS, CN, OOP. 45 minutes, spoken."
+    ]
+   ],
+   "sun": [
+    "Take climbing stairs and write all four versions cold. If the recursion-to-tabulation conversion isn't mechanical yet, drill it until it is.",
+    "Weekly retro. DP is the hardest month and it starts now. Get your sleep in order this week."
+   ]
+  },
+  {
+   "n": 26,
+   "ph": 7,
+   "dates": "25 – 31 Jan 2027",
+   "step": "Striver Step 16.4-16.5",
+   "dsa": "DP on subsequences & strings",
+   "dev": "Mock interviews I",
+   "goal": "0/1 knapsack is the parent of roughly fifteen problems. Learn the parent and the children come free.",
+   "target": 14,
+   "d": [
+    [
+     "DP on subsequences: the take / not-take grid, and how the target dimension appears.",
+     "Subset sum equals target, partition into two equal-sum subsets.",
+     "Mock interview 1: a full 60-minute DSA round with a peer or on Pramp. Record it."
+    ],
+    [
+     "Partition problems and minimising the difference between two subsets.",
+     "Partition a set into two subsets with minimum difference, count subsets with sum K.",
+     "Review the recording. Note every place you went silent or guessed. Those are your real gaps."
+    ],
+    [
+     "Counting partitions, then 0/1 knapsack — the canonical form.",
+     "Count partitions with a given difference, 0/1 knapsack.",
+     "Mock interview 2: different peer, different topic. Practise thinking out loud continuously."
+    ],
+    [
+     "Unbounded knapsack: what changes when you can reuse an item, and why the index doesn't advance.",
+     "Minimum coins, target sum, coin change II, unbounded knapsack.",
+     "Behavioural prep: STAR format. Write out 8 stories covering conflict, failure, leadership, ambiguity."
+    ],
+    [
+     "Rod cutting as unbounded knapsack. Then longest common subsequence — the string DP anchor.",
+     "Rod cutting, longest common subsequence.",
+     "Mock interview 3: full loop simulation — DSA, then a project deep-dive, then behavioural."
+    ],
+    [
+     "The LCS family: substring vs subsequence, printing the answer, palindromic variants.",
+     "Print the LCS, longest common substring, longest palindromic subsequence, minimum insertions to make a palindrome.",
+     "Project deep-dive rehearsal. DevTinder end to end: architecture, auth flow, why MongoDB, what you'd change."
+    ]
+   ],
+   "sun": [
+    "0/1 knapsack cold, in all four forms. It is the single highest-leverage DP problem in the sheet.",
+    "Weekly retro: pipeline review, follow-ups, and next week's applications."
+   ]
+  },
+  {
+   "n": 27,
+   "ph": 7,
+   "dates": "1 – 7 Feb 2027",
+   "step": "Striver Step 16.6-16.7",
+   "dsa": "DP — edit distance, stocks, LIS",
+   "dev": "Mock interviews II",
+   "goal": "Stock problems are a state machine. Draw the states before writing code and they stop being confusing.",
+   "target": 15,
+   "d": [
+    [
+     "String DP continued: insertions, deletions, and the shortest common supersequence.",
+     "Minimum insertions and deletions to make two strings equal, shortest common supersequence.",
+     "Mock interview 4: DSA round focused on arrays and strings. 60 minutes, timed."
+    ],
+    [
+     "Distinct subsequences, edit distance, and wildcard matching — the three hard string DPs.",
+     "Distinct subsequences, edit distance, wildcard matching.",
+     "Mock interview 5: DSA round focused on trees and graphs."
+    ],
+    [
+     "DP on stocks as a state machine: holding or not holding, and the transitions between them.",
+     "Best time to buy and sell stock I, best time to buy and sell stock II.",
+     "Company research: shortlist 25 target companies. Interview format, tech stack, recent news."
+    ],
+    [
+     "Stocks with a transaction cap — adding a third dimension for transactions used.",
+     "Best time to buy and sell stock III, best time to buy and sell stock IV.",
+     "Mock interview 6: mixed round. Ask your partner to interrupt and push back on your approach."
+    ],
+    [
+     "Stocks with cooldown and with a fee. Small changes to the state machine, large changes to the answer.",
+     "Buy and sell stock with cooldown, buy and sell stock with a transaction fee.",
+     "Salary and offer conversation prep. Know your number. Practise saying it without flinching."
+    ],
+    [
+     "Longest increasing subsequence: the O(n²) DP, the O(n log n) patience-sorting version, and printing it.",
+     "LIS in O(n²), LIS in O(n log n), print the LIS, largest divisible subset, longest string chain.",
+     "Mock interview 7: full loop with someone senior if you can find one."
+    ]
+   ],
+   "sun": [
+    "Edit distance cold. Then draw its DP table by hand for two four-letter words, filling every cell.",
+    "Weekly retro. Pipeline check: how many applications, how many responses, how many in progress?"
+   ]
+  },
+  {
+   "n": 28,
+   "ph": 7,
+   "dates": "8 – 14 Feb 2027",
+   "step": "Striver Step 16.8-16.9",
+   "dsa": "DP — partition & trees",
+   "dev": "Interview loop",
+   "goal": "Partition DP is the hardest shape in the sheet. Two weeks of groundwork have been building to this.",
+   "target": 12,
+   "d": [
+    [
+     "Partition DP (MCM style): try every split point, solve both halves, combine.",
+     "Matrix chain multiplication, minimum cost to cut a stick.",
+     "Interview logistics: test your setup end to end — camera, mic, IDE, notepad, backup connection. Then rehearse the DevTinder architecture walkthrough."
+    ],
+    [
+     "More partition DP — the pattern of choosing the last operation rather than the first.",
+     "Burst balloons, evaluate boolean expression to true.",
+     "Live interviews or mock interview 9."
+    ],
+    [
+     "Front partition: palindrome partitioning II, and partitioning an array for maximum sum.",
+     "Palindrome partitioning II, partition array for maximum sum.",
+     "Debrief and gap-fill. Update your question bank from every real interview."
+    ],
+    [
+     "Squares in a matrix, and DP with bitmasks for small N.",
+     "Count square submatrices with all ones, travelling salesman with a bitmask.",
+     "Company-specific prep: for each company in your pipeline, drill their tagged questions."
+    ],
+    [
+     "DP on trees: rerooting and the two-value return pattern.",
+     "House robber III, diameter of a binary tree revisited as tree DP.",
+     "Applications: 15 more. Do not slow down because interviews started."
+    ],
+    [
+     "Full DP consolidation. Mapping every problem you've done back to its parent pattern.",
+     "Build a one-page DP pattern map: recognition signal, state definition, transition, for each of the 8 DP families.",
+     "Rehearse all four project deep-dives again. They come up in every single loop."
+    ]
+   ],
+   "sun": [
+    "Month 7 done. DP is behind you. Re-solve one problem from each DP family, cold. This is your hardest revision day so far.",
+    "Weekly retro. Two months of runway left — assess where you actually stand."
+   ]
+  },
+  {
+   "n": 29,
+   "ph": 8,
+   "dates": "15 – 21 Feb 2027",
+   "step": "Striver Step 17–18",
+   "dsa": "Tries & advanced strings",
+   "dev": "Interview loop",
+   "goal": "The last new material. Tries are quick; KMP and Z-function are rarer but they do separate candidates.",
+   "target": 14,
+   "d": [
+    [
+     "The trie: node structure, insert, search, startsWith. Space versus time trade-off against a hashmap.",
+     "Implement a trie, implement a trie II (with counts).",
+     "Live interviews if you have them. Otherwise mock interview 10, followed by a project deep-dive rehearsal."
+    ],
+    [
+     "Trie applications: prefix problems and word structures.",
+     "Longest word with all prefixes, count distinct substrings using a trie.",
+     "Live interviews. Or mock 10 if the pipeline is quiet."
+    ],
+    [
+     "Bitwise tries for XOR maximisation — the one genuinely clever trie use.",
+     "Maximum XOR of two numbers in an array, maximum XOR with an element from an array.",
+     "Debrief and gap-fill."
+    ],
+    [
+     "Z-function and KMP: prefix functions and linear-time pattern matching.",
+     "Longest happy prefix (KMP), shortest palindrome, Z-function implementation.",
+     "Company-tagged practice for whichever companies are live in your pipeline."
+    ],
+    [
+     "Rabin-Karp rolling hash, and the remaining hard string problems.",
+     "Rabin-Karp, count and say, repeated string match, minimum characters to add for palindrome.",
+     "Applications and referral follow-ups."
+    ],
+    [
+     "Segment trees and Fenwick trees — not in Striver's sheet, but asked at Google, Uber and Media.net.",
+     "Build a segment tree, range sum query, range minimum query, Fenwick tree with point update.",
+     "Rehearse your project stories and your eight STAR answers. Out loud, timed."
+    ]
+   ],
+   "sun": [
+    "All new material is now covered. Write a one-page map of every pattern you know — this becomes your revision index for the final three weeks.",
+    "Weekly retro. From here it's revision, mocks, and interviewing. No new topics."
+   ]
+  },
+  {
+   "n": 30,
+   "ph": 8,
+   "dates": "22 – 28 Feb 2027",
+   "step": "Striver SDE Sheet",
+   "dsa": "Revision sprint I",
+   "dev": "Interview loop",
+   "goal": "Switch modes entirely. No new topics. Speed, recall and clean communication under time pressure.",
+   "target": 20,
+   "d": [
+    [
+     "Revision method: read the title, state the approach and complexity in 60 seconds, only then code.",
+     "SDE Sheet days 1–5: arrays and strings. Timed, 25 minutes per problem, no editorial.",
+     "Live interviews. If the week is quiet, mock interview 11 with a peer."
+    ],
+    [
+     "Reviewing your own solved problems — find the ones you marked confidence 1 or 2 in the tracker.",
+     "SDE Sheet days 6–10: linked lists and recursion. Timed.",
+     "Debrief: write down every question you were asked while it's fresh. That list is your syllabus now."
+    ],
+    [
+     "Pattern recall drills: given a problem statement, name the pattern in 30 seconds without solving.",
+     "SDE Sheet days 11–15: greedy, stacks and queues. Timed.",
+     "Company-tagged frontend and backend questions for whoever is live in your pipeline."
+    ],
+    [
+     "Timed contest conditions. Practise reading a problem carefully rather than fast.",
+     "LeetCode weekly contest (virtual). Full 90 minutes, no interruptions.",
+     "Applications: 15 more. The pipeline empties faster than you expect it to."
+    ],
+    [
+     "Contest review — the highest-value hour of the week. Understand every problem you missed.",
+     "Solve every contest problem you couldn't finish. Write down why you missed each.",
+     "Rehearse all four project stories. Two minutes each, then five minutes each, then handle follow-ups."
+    ],
+    [
+     "Communication drill: solve while narrating continuously, as though someone is listening.",
+     "SDE Sheet days 16–20: binary search and trees. Timed and narrated aloud.",
+     "Referral follow-ups. Reconnect with anyone who went quiet over December."
+    ]
+   ],
+   "sun": [
+    "Redo every problem in your tracker still marked as needing a redo. Clear that list completely.",
+    "Weekly retro. Interview pipeline: what's live, what's stalled, what needs a follow-up?"
+   ]
+  },
+  {
+   "n": 31,
+   "ph": 8,
+   "dates": "1 – 7 Mar 2027",
+   "step": "Striver SDE Sheet + tagged",
+   "dsa": "Revision sprint II",
+   "dev": "Interview loop",
+   "goal": "Company-tagged practice from here. Interview shapes vary more than topics do.",
+   "target": 20,
+   "d": [
+    [
+     "How to approach an unseen problem: clarify, brute force, optimise, code, test. Never code first.",
+     "SDE Sheet days 21–25: graphs. Timed and narrated.",
+     "Live interviews, or mock 12. Ask for a machine coding round if your targets run one."
+    ],
+    [
+     "Edge cases as a discipline: empty, single element, duplicates, overflow, negatives.",
+     "SDE Sheet days 26–31: DP and tries. Timed and narrated.",
+     "Debrief and gap-fill. Anything you fumbled goes straight onto tomorrow's list."
+    ],
+    [
+     "Dry running your own code before saying you're done. This alone lifts interview outcomes.",
+     "Company-tagged: top 30 for your highest-priority company.",
+     "System design, light: how would DevTinder scale to a million users? You won't get a full design round, but be ready for the question."
+    ],
+    [
+     "Handling a hint gracefully, and recovering when you're stuck without going silent.",
+     "Mock interview 11 and 12, back to back, different partners.",
+     "Company-tagged practice for your top three companies."
+    ],
+    [
+     "Aptitude and reasoning if your target companies screen with it.",
+     "Company-tagged: top 30 for your second and third target companies.",
+     "Behavioural: all eight STAR stories, spoken, timed at two minutes each."
+    ],
+    [
+     "Everything at once: DSA, project questions, CS fundamentals, behavioural, in one sitting.",
+     "Full mock loop: 3 rounds in one evening, exactly as the real thing runs.",
+     "Full mock loop in one evening: DSA, machine coding, project deep-dive, behavioural."
+    ]
+   ],
+   "sun": [
+    "Final full revision audit. Every topic, one problem, cold. Anything you fail goes on Monday's list.",
+    "Weekly retro. Final week ahead — protect your sleep, it matters more than one extra problem."
+   ]
+  },
+  {
+   "n": 32,
+   "ph": 8,
+   "dates": "8 – 14 Mar 2027",
+   "step": "Final",
+   "dsa": "Peak & interview",
+   "dev": "Interviewing",
+   "goal": "You're prepared. This week is about staying sharp without burning out. Do less than you think you should.",
+   "target": 12,
+   "d": [
+    [
+     "Light revision only. Re-read your pattern map and your one-line approach notes.",
+     "6–8 problems across mixed topics. Medium difficulty. Keep the touch, don't grind.",
+     "Interviews take priority all week. Otherwise light review of your own notes only."
+    ],
+    [
+     "Re-read your own notes rather than solving new problems. Recall beats acquisition now.",
+     "6–8 mixed problems. Stop the moment it stops feeling sharp.",
+     "Re-read your React, Node and JavaScript interview PDFs. Skim them, don't study them."
+    ],
+    [
+     "Interview logistics: setup, connection, camera, background, water, notepad, backup phone.",
+     "Company-tagged for whatever's live this week.",
+     "Logistics: test everything again. Charge your devices. Have a backup connection ready."
+    ],
+    [
+     "Rest is preparation. A tired candidate underperforms a less-prepared rested one.",
+     "4–6 problems maximum. Then stop and do something else entirely.",
+     "Rest. A tired candidate underperforms a less-prepared rested one. Stop early tonight."
+    ],
+    [
+     "Your project stories and eight STAR answers, out loud, one final time.",
+     "Light mixed practice. Interviews take priority over everything on this list.",
+     "Project stories and STAR answers, out loud, one final time."
+    ],
+    [
+     "Nothing new. Trust the 1,300 hours behind you.",
+     "Whatever your live interviews require, and nothing more.",
+     "Nothing new. Whatever your live interviews require, and nothing more."
+    ]
+   ],
+   "sun": [
+    "Thirty-two weeks. Whatever the outcome this week, the capability is real and it doesn't expire. Keep the tracker running.",
+    "Plan the next block: offers to weigh, or a fresh application push with everything you now know."
+   ]
+  }
+ ]
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Today — DSA Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/components.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap nav-row">
+    <a class="brand" href="#/today">DSA·TRACKER</a>
+    <nav class="site-nav" aria-label="Views">
+      <a href="#/today">Today</a>
+      <a href="#/problems">Problems</a>
+      <a href="#/roadmap">Roadmap</a>
+      <a href="#/progress">Progress</a>
+      <a href="#/courses">Courses</a>
+      <a href="#/applications">Applications</a>
+      <a href="#/data">Data</a>
+      <a href="#/help">Help</a>
+    </nav>
+  </div>
+  <div class="strip-rule" aria-hidden="true"></div>
+</header>
+
+<main id="app" class="wrap" tabindex="-1"></main>
+
+<!-- Classic scripts, deferred, in dependency order: data → logic → store →
+     components → views → entry. ES modules are not used because they are
+     blocked on file:// URLs. -->
+<script defer src="src/data/curriculum.js"></script>
+<script defer src="src/data/striver.js"></script>
+<script defer src="src/data/courses.js"></script>
+<script defer src="src/revision.js"></script>
+<script defer src="src/store.js"></script>
+<script defer src="src/components/helpers.js"></script>
+<script defer src="src/components/modal.js"></script>
+<script defer src="src/components/dayStrip.js"></script>
+<script defer src="src/components/problemForm.js"></script>
+<script defer src="src/views/today.js"></script>
+<script defer src="src/views/problems.js"></script>
+<script defer src="src/views/roadmap.js"></script>
+<script defer src="src/views/progress.js"></script>
+<script defer src="src/views/courses.js"></script>
+<script defer src="src/views/applications.js"></script>
+<script defer src="src/views/data.js"></script>
+<script defer src="src/views/help.js"></script>
+<script defer src="src/main.js"></script>
+</body>
+</html>
