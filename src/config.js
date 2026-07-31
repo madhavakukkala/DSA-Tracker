@@ -6,6 +6,6 @@
 //   Project URL  → SUPABASE_URL
 //   anon public  → SUPABASE_ANON_KEY   (safe to ship in frontend code)
 window.CONFIG = {
-  SUPABASE_URL: "",
-  SUPABASE_ANON_KEY: "",
+  SUPABASE_URL: "https://irytcbztrgvbwtqgcbvh.supabase.co",
+  SUPABASE_ANON_KEY: "sb_publishable_xM1LODZuCgfjOhbunG0FbA_FJ1j_gYa",
 };
