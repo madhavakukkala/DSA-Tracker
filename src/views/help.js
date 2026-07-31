@@ -25,7 +25,8 @@
     '<div class="help-row"><span class="mono">Problems</span><p>Every problem, every revision date. Search, filter, fix, delete.</p></div>' +
     '<div class="help-row"><span class="mono">Roadmap</span><p>The timetable. All 32 weeks, day by day, with your status on each.</p></div>' +
     '<div class="help-row"><span class="mono">Progress</span><p>Live counts: due, overdue, redo flags, solved-alone rate, topic breakdown.</p></div>' +
-    '<div class="help-row"><span class="mono">Courses</span><p>Every Namaste episode and Striver sub-step, mapped to the week it belongs in.</p></div>' +
+    '<div class="help-row"><span class="mono">Courses</span><p>Every Namaste React and Node episode, mapped to the week it belongs in.</p></div>' +
+    '<div class="help-row"><span class="mono">Striver</span><p>The full A2Z checklist: 18 steps, 462 problems, started/cleared per sub-step.</p></div>' +
     '<div class="help-row"><span class="mono">Applications</span><p>From week 19. Every application, every follow-up.</p></div>' +
     '<div class="help-row"><span class="mono">Notes</span><p>Every day\'s note, week by week. Write on Today, reread here.</p></div>' +
     '<div class="help-row"><span class="mono">Data</span><p>Export, import, reset. Back up weekly — browser storage is one careless click from gone.</p></div>' +

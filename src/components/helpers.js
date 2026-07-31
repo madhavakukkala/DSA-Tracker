@@ -117,6 +117,20 @@
   function planEnd() { return R.addDays(Store.state.startDate, 223); }
   function planRange() { return fmtShort(Store.state.startDate) + " → " + fmtShort(planEnd()); }
 
+  // Canonical topic per week — same names as the workbook's dashboard, so the
+  // quick log prefills consistently and the by-topic table accumulates.
+  var WEEK_TOPIC = [
+    "Python basics", "Python basics", "Sorting", "Arrays",
+    "Arrays", "Binary Search", "Binary Search", "Strings",
+    "Linked List", "Linked List", "Recursion", "Recursion",
+    "Bit Manipulation", "Stacks & Queues", "Stacks & Queues", "Sliding Window",
+    "Heaps", "Greedy", "Binary Trees", "Binary Trees",
+    "BST", "Graphs", "Graphs", "Graphs",
+    "DP", "DP", "DP", "DP",
+    "Tries", "Mixed revision", "Mixed revision", "Mixed revision",
+  ];
+  function topicForWeek(n) { return WEEK_TOPIC[n - 1] || ""; }
+
   function download(filename, text) {
     var blob = new Blob([text], { type: "application/json" });
     var url = URL.createObjectURL(blob);
@@ -147,5 +161,6 @@
   UI.fmtHM = fmtHM;
   UI.fmtSpan = fmtSpan;
   UI.schedule = schedule;
+  UI.topicForWeek = topicForWeek;
   UI.download = download;
 })();

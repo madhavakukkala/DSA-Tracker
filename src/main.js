@@ -5,8 +5,8 @@
   "use strict";
 
   var ROUTES = [
-    "today", "problems", "roadmap", "progress",
-    "courses", "applications", "notes", "data", "help",
+    "today", "problems", "roadmap", "progress", "courses",
+    "striver", "applications", "notes", "data", "help",
   ];
 
   var app = document.getElementById("app");

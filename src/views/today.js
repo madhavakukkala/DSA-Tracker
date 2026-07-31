@@ -213,7 +213,7 @@
         form.innerHTML = UI.problemFormHTML({
           dateSolved: today,
           week: info.week,
-          topic: w.dsa,
+          topic: UI.topicForWeek(info.week) || w.dsa,
           striverStep: w.step,
         }) +
         '<div class="f-actions"><button type="submit" class="btn btn-primary">Save problem</button>' +
