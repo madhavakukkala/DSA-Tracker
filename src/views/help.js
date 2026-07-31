@@ -27,6 +27,7 @@
     '<div class="help-row"><span class="mono">Progress</span><p>Live counts: due, overdue, redo flags, solved-alone rate, topic breakdown.</p></div>' +
     '<div class="help-row"><span class="mono">Courses</span><p>Every Namaste episode and Striver sub-step, mapped to the week it belongs in.</p></div>' +
     '<div class="help-row"><span class="mono">Applications</span><p>From week 19. Every application, every follow-up.</p></div>' +
+    '<div class="help-row"><span class="mono">Notes</span><p>Every day\'s note, week by week. Write on Today, reread here.</p></div>' +
     '<div class="help-row"><span class="mono">Data</span><p>Export, import, reset. Back up weekly — browser storage is one careless click from gone.</p></div>' +
     '</div></section>' +
 
@@ -40,7 +41,7 @@
     '<div class="help-rows">' +
     '<div class="help-row"><span class="mono">n</span><p>Log a new problem</p></div>' +
     '<div class="help-row"><span class="mono">/</span><p>Search problems</p></div>' +
-    '<div class="help-row"><span class="mono">1 – 7</span><p>Switch screens</p></div>' +
+    '<div class="help-row"><span class="mono">1 – 9</span><p>Switch screens</p></div>' +
     '<div class="help-row"><span class="mono">Esc</span><p>Close any modal or form</p></div>' +
     '</div></section>';
 

@@ -96,6 +96,7 @@
           if (dateChanged) {
             s.problems = []; s.dailyLogs = []; s.applications = [];
             s.weeks = {}; s.courses = {}; s.striver = {};
+            s.dayTicks = {}; s.notes = {};
             s.lastBackup = null; s.backupAtCount = 0;
           }
           s.settings.username = name;

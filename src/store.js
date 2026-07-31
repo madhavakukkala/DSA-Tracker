@@ -27,6 +27,8 @@
       weeks: {},      // week number → 'not-started' | 'in-progress' | 'done'
       courses: {},    // course item id → { watched, built }
       striver: {},    // striver row id → { started, cleared }
+      dayTicks: {},   // "YYYY-MM-DD" → { revision:true, learn:true, … }
+      notes: {},      // "YYYY-MM-DD" → the day's note text
       lastBackup: null,
       backupAtCount: 0, // problems.length at the last export — drives the every-25 offer (§8.3)
     };

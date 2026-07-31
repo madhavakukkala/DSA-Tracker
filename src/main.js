@@ -6,7 +6,7 @@
 
   var ROUTES = [
     "today", "problems", "roadmap", "progress",
-    "courses", "applications", "data", "help",
+    "courses", "applications", "notes", "data", "help",
   ];
 
   var app = document.getElementById("app");
@@ -137,7 +137,7 @@
     if (UI.modalOpen()) return;
     if (!Store.state || needsOnboarding()) return;
 
-    if (e.key >= "1" && e.key <= "7") {
+    if (e.key >= "1" && e.key <= "9") {
       location.hash = "#/" + ROUTES[+e.key - 1];
     } else if (e.key === "n") {
       e.preventDefault();

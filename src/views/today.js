@@ -4,8 +4,12 @@
   window.Views = window.Views || {};
   var esc = function (s) { return UI.esc(s); };
 
-  function subBlock(cls, time, label, text) {
-    return '<div class="blk ' + cls + '">' +
+  // Today's blocks carry a tick-box so the day's work can be checked off.
+  function subBlock(cls, time, label, text, key, ticks) {
+    var done = !!(ticks && ticks[key]);
+    return '<div class="blk ' + cls + (done ? " done" : "") + '">' +
+      '<label class="blk-check"><input type="checkbox" data-task="' + key + '"' +
+      (done ? " checked" : "") + ' aria-label="Mark ' + label + ' as done"></label>' +
       '<div class="blk-t"><b>' + label + "</b><em>" + time + "</em></div>" +
       '<div class="blk-c">' + text + "</div></div>";
   }
@@ -78,23 +82,25 @@
       }
       if (info.beforeStart) { isRest = false; day = w.d[0]; }
 
+      var ticks = Store.state.dayTicks[today] || {};
       var morning, night;
       if (isRest) {
-        morning = subBlock("learn", span([sch.dsa.start, sch.dsa.end]), "Consolidation", esc(w.sun[0]));
-        night = subBlock("eve", span([sch.dev.start, sch.dev.end]), "Night", esc(w.sun[1]));
+        morning = subBlock("learn", span([sch.dsa.start, sch.dsa.end]), "Consolidation", esc(w.sun[0]), "rest-am", ticks);
+        night = subBlock("eve", span([sch.dev.start, sch.dev.end]), "Night", esc(w.sun[1]), "rest-pm", ticks);
       } else {
         morning =
           subBlock("learn", span(sch.dsa.revision), "Revision",
             queue.length === 0 ? "Nothing due this session. Straight to learning."
-              : "Clear the queue below — <b>" + queue.length + " due</b>. Title → approach → complexity, out loud, under 90 seconds each.") +
-          subBlock("learn", span(sch.dsa.learn), "Learn", esc(day[0])) +
-          subBlock("prac", span(sch.dsa.practise), "Practise", esc(day[1])) +
+              : "Clear the queue below — <b>" + queue.length + " due</b>. Title → approach → complexity, out loud, under 90 seconds each.",
+            "revision", ticks) +
+          subBlock("learn", span(sch.dsa.learn), "Learn", esc(day[0]), "learn", ticks) +
+          subBlock("prac", span(sch.dsa.practise), "Practise", esc(day[1]), "practise", ticks) +
           subBlock("prac", span(sch.dsa.log), "Log",
-            "Log every problem below — it builds tomorrow's revision queue.");
+            "Log every problem below — it builds tomorrow's revision queue.", "log", ticks);
         night =
-          subBlock("eve", span(sch.dev.build), "Build", esc(day[2])) +
+          subBlock("eve", span(sch.dev.build), "Build", esc(day[2]), "build", ticks) +
           subBlock("eve", span(sch.dev.commit), "Commit",
-            "Push your code. Write tomorrow's first task on a sticky note.");
+            "Push your code. Write tomorrow's first task on a sticky note.", "commit", ticks);
       }
 
       el.innerHTML =
@@ -131,12 +137,41 @@
           : '<ul class="q-list">' + queue.map(function (p) { return queueItemHTML(p, today); }).join("") + "</ul>") +
         "</section>" +
 
+        '<section class="notes-sec" aria-label="Notes">' +
+        '<div class="sec-head"><h2 class="section-title">Notes</h2>' +
+        '<span class="mono faint">saved automatically · read them all under Notes</span></div>' +
+        '<textarea id="dayNote" rows="4" placeholder="Anything worth keeping about today — ' +
+        'what clicked, what fought back, what to fix tomorrow.">' +
+        esc(Store.state.notes[today] || "") + "</textarea></section>" +
+
         '<section class="log-sec" aria-label="Quick log">' +
         '<button class="btn btn-primary" id="qlToggle" aria-expanded="false">+ Log a problem</button>' +
         '<span class="mono faint" id="qlCount">' +
         (loggedToday ? loggedToday + " logged today" : "") + "</span>" +
         '<form id="qlForm" class="ql-form" hidden novalidate></form>' +
         "</section>";
+
+      // ---- task tick-boxes ----
+      el.querySelectorAll("input[data-task]").forEach(function (cb) {
+        cb.addEventListener("change", function () {
+          var k = cb.getAttribute("data-task");
+          Store.update(function (s) {
+            var d = s.dayTicks[today] = s.dayTicks[today] || {};
+            if (cb.checked) d[k] = true; else delete d[k];
+            if (Object.keys(d).length === 0) delete s.dayTicks[today];
+          });
+          cb.closest(".blk").classList.toggle("done", cb.checked);
+        });
+      });
+
+      // ---- the day's note, autosaved ----
+      el.querySelector("#dayNote").addEventListener("input", function () {
+        var v = this.value;
+        Store.update(function (s) {
+          if (v.trim()) s.notes[today] = v;
+          else delete s.notes[today];
+        });
+      });
 
       // ---- revision queue: reveal then tick ----
       el.querySelectorAll(".q-item").forEach(function (li) {
