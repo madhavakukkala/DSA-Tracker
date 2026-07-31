@@ -14,6 +14,34 @@
     "DP", "Tries", "Segment Tree",
   ];
 
+  // Striver step → topic, so each topic knows its total problem count and the
+  // bars can read "solved / total" like the workbook.
+  var STEP_TOPIC = {
+    1: "Python basics", 2: "Sorting", 3: "Arrays", 4: "Binary Search",
+    5: "Strings", 6: "Linked List", 7: "Recursion", 8: "Bit Manipulation",
+    9: "Stacks & Queues", 10: "Sliding Window", 11: "Heaps", 12: "Greedy",
+    13: "Binary Trees", 14: "BST", 15: "Graphs", 16: "DP", 17: "Tries",
+    18: "Strings",
+  };
+  var ADDED_TOPIC = {
+    "x-intervals-sweep-line": "Arrays",
+    "x-number-theory-modular-a": "Bit Manipulation",
+    "x-segment-tree-fenwick-tr": "Segment Tree",
+  };
+
+  function topicTotals() {
+    var totals = {};
+    window.SEED.striver.forEach(function (r) {
+      var t = r.added
+        ? Object.keys(ADDED_TOPIC).reduce(function (acc, k) {
+            return r.id.indexOf(k.slice(0, 12)) === 0 ? ADDED_TOPIC[k] : acc;
+          }, null)
+        : STEP_TOPIC[r.step];
+      if (t) totals[t] = (totals[t] || 0) + r.problemCount;
+    });
+    return totals;
+  }
+
   function sparklineSVG(points) {
     // Inline SVG, 30 points, no chart library (§11).
     var w = 300, h = 48, max = Math.max.apply(null, points.concat([1]));
@@ -61,19 +89,28 @@
         return Store.state.weeks[k] === "done";
       }).length;
 
-      // By topic — the fixed 18 first, any extra topics people typed appended
+      // By topic — the fixed 18 first (solved / the topic's Striver total),
+      // any extra topics people typed appended after
       var byTopic = {};
       TOPICS.forEach(function (t) { byTopic[t] = 0; });
       ps.forEach(function (p) {
         var t = (p.topic || "").trim() || "(no topic)";
         byTopic[t] = (byTopic[t] || 0) + 1;
       });
+      var totals = topicTotals();
       var topicNames = TOPICS.concat(Object.keys(byTopic).filter(function (t) {
         return TOPICS.indexOf(t) === -1;
       }).sort());
       var maxTopic = Math.max.apply(null, topicNames.map(function (t) { return byTopic[t]; }).concat([1]));
       var topicBars = topicNames.map(function (t) {
-        return hbar(t, byTopic[t], maxTopic, "");
+        var solved = byTopic[t], total = totals[t];
+        if (total) {
+          return '<div class="hbar-row"><span class="hbar-label">' + esc(t) + "</span>" +
+            '<span class="hbar-track"><span class="hbar-fill" style="width:' +
+            Math.min(100, solved / total * 100) + '%"></span></span>' +
+            '<span class="hbar-n mono">' + solved + " / " + total + "</span></div>";
+        }
+        return hbar(t, solved, maxTopic, "");
       }).join("");
 
       var diff = { Easy: 0, Medium: 0, Hard: 0 };

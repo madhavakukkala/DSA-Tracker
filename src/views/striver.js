@@ -24,10 +24,17 @@
       var problems = rows.reduce(function (a, r) { return a + r.problemCount; }, 0);
       var pct = Math.round(cleared / rows.length * 100);
 
+      var solved = Store.state.problems.length;
+      var solvedPct = Math.min(100, Math.round(solved / problems * 100));
+
       var html =
         '<header class="page-head">' +
         '<p class="eyebrow">18 steps · ' + problems + " problems · you are in week " + info.week + "</p>" +
         '<h1 class="page-title">Striver A2Z</h1></header>' +
+        '<div class="progress"><div class="progress-top">' +
+        "<span>Problems solved</span><span><b>" + solvedPct + "%</b> · " + solved + " / " +
+        problems + "</span></div>" +
+        '<div class="bar"><div class="bar-fill" style="width:' + solvedPct + '%"></div></div></div>' +
         '<div class="progress"><div class="progress-top">' +
         "<span>Sub-steps cleared</span><span><b>" + pct + "%</b> · " + cleared + " / " +
         rows.length + "</span></div>" +

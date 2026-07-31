@@ -423,7 +423,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--ink);outline:none}
 
 .prog-cols{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:44px}
 .hbars{margin-top:18px}
-.hbar-row{display:grid;grid-template-columns:150px 1fr 34px;gap:12px;
+.hbar-row{display:grid;grid-template-columns:150px 1fr 58px;gap:12px;
   align-items:center;margin-bottom:9px;font-size:13px}
 .hbar-label{text-align:right;color:var(--muted);overflow:hidden;
   text-overflow:ellipsis;white-space:nowrap}
