@@ -116,7 +116,7 @@
         '<div class="panels">' +
         '<section class="panel panel-dawn" aria-label="DSA window">' +
         '<div class="panel-head mono">' +
-        (isRest ? "REST DAY · CONSOLIDATION"
+        (isRest ? "DAY 7 · CONSOLIDATION — NO NEW TOPICS"
                 : "DSA · " + span([sch.dsa.start, sch.dsa.end])) + "</div>" +
         morning + "</section>" +
         '<section class="panel panel-dusk" aria-label="Dev window">' +

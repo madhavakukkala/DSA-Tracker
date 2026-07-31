@@ -24,14 +24,14 @@
         block("prac", span(sch.dsa.practise), "Practise", x[1]) +
         block("eve", span(sch.dev.build), "Night", x[2]) + "</div>";
     });
-    html += '<div class="day rest"><div class="d-name">Day 7 · rest & consolidation<span></span></div>' +
+    html += '<div class="day rest"><div class="d-name">Day 7 · consolidation — no new topics<span></span></div>' +
       block("learn", span([sch.dsa.start, sch.dsa.end]), "DSA", w.sun[0]) +
       block("eve", span([sch.dev.start, sch.dev.end]), "Night", w.sun[1]) + "</div>";
     html += '<div class="day"><div class="d-name">Every day<span></span></div>' +
       block("learn", span(sch.dsa.revision), "Revision",
         "Clear your revision queue on the Today screen — everything due at day 2, day 5 and day 10. " +
         "Read the title, state the approach and the complexity out loud in under 90 seconds. " +
-        "If you can't, mark it failed and re-solve it fully on the rest day.") +
+        "If you can't, mark it failed and re-solve it fully on Day 7.") +
       block("prac", span(sch.dsa.log), "Log",
         "Log every problem in the tracker: date, difficulty, whether you solved it alone, your " +
         "approach in one line, and a confidence score out of 5. The revision queue builds itself from this.") +

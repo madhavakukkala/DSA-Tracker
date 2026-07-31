@@ -35,7 +35,7 @@
     return ((R.diffDays(startDate, dateStr) % 7) + 7) % 7;
   }
 
-  function dayLabel(i) { return i === 6 ? "Rest day" : "Day " + (i + 1); }
+  function dayLabel(i) { return "Day " + (i + 1); } // Day 7 = consolidation, not rest
 
   // Everything Today and Roadmap need to know about "now".
   function currentWeekInfo() {

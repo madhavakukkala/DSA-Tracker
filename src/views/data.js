@@ -39,7 +39,8 @@
             "</b> — data is stored in your account and follows you across devices.</p>"
           : '<p class="small faint">Local mode — data lives in this browser only.</p>') +
         '<p class="small faint">The date below is <b>Day 1</b>. Every week and revision ' +
-        "window counts from it. Changing it re-maps the roadmap; logged problems keep their dates.</p>" +
+        "window counts from it. <b>Changing Day 1 resets the tracker</b> — the 32 weeks " +
+        "restart from the new date. Name and window times can be changed freely.</p>" +
         '<div class="f-grid plan-grid">' +
         '<label class="f-field"><span>Name</span>' +
         '<input id="dName" maxlength="30" value="' + esc(Store.state.settings.username) + '"></label>' +
@@ -57,10 +58,18 @@
         '<p class="small faint">Restores a backup file. You will see a summary and confirm before anything is replaced.</p>' +
         '<input type="file" id="dImport" accept=".json,application/json"></section>' +
 
-        '<section class="data-sec danger-zone"><h2 class="section-title">Reset</h2>' +
-        '<p class="small faint">Erases everything. Type <b class="mono">DELETE</b> to arm the button.</p>' +
+        '<section class="data-sec danger-zone"><h2 class="section-title">Danger zone</h2>' +
+        '<p class="small faint">Type <b class="mono">DELETE</b> to arm the buttons. ' +
+        "<b>Reset</b> erases all tracker data" +
+        (Auth.active()
+          ? "; <b>Delete account</b> erases the data <i>and</i> the account itself — permanently."
+          : ".") + "</p>" +
         '<div class="reset-row"><input id="dResetWord" class="mono" autocomplete="off" placeholder="DELETE">' +
-        '<button class="btn btn-danger" id="dReset" disabled>Reset all data</button></div></section>';
+        '<button class="btn btn-danger" id="dReset" disabled>Reset all data</button>' +
+        (Auth.active()
+          ? '<button class="btn btn-danger" id="dKill" disabled>Delete account</button>'
+          : "") +
+        "</div></section>";
 
       el.querySelector("#dExport").addEventListener("click", function () {
         UI.download("dsa-tracker-backup-" + today + ".json", Store.exportJSON());
@@ -71,12 +80,30 @@
       el.querySelector("#dStartSave").addEventListener("click", function () {
         var v = el.querySelector("#dStart").value;
         if (!v) return;
+        var dateChanged = Store.state.startDateChosen && v !== Store.state.startDate;
+        if (dateChanged) {
+          var ok = confirm(
+            "Changing Day 1 RESETS your tracker.\n\n" +
+            "All logged problems, revisions, week statuses, checklists and daily logs " +
+            "are erased, and the 32 weeks restart from " + UI.fmtShort(v) + ".\n\n" +
+            "Export a backup first if you want to keep the history.\n\nReset and restart?");
+          if (!ok) { el.querySelector("#dStart").value = Store.state.startDate; return; }
+        }
+        var name = el.querySelector("#dName").value.trim();
+        var dsa = el.querySelector("#dDsa").value || "06:30";
+        var dev = el.querySelector("#dDev").value || "21:00";
         Store.update(function (s) {
-          s.settings.username = el.querySelector("#dName").value.trim();
-          s.settings.dsaStart = el.querySelector("#dDsa").value || "06:30";
-          s.settings.devStart = el.querySelector("#dDev").value || "21:00";
+          if (dateChanged) {
+            s.problems = []; s.dailyLogs = []; s.applications = [];
+            s.weeks = {}; s.courses = {}; s.striver = {};
+            s.lastBackup = null; s.backupAtCount = 0;
+          }
+          s.settings.username = name;
+          s.settings.dsaStart = dsa;
+          s.settings.devStart = dev;
         });
         Store.setStartDate(v); // exact Day 1, no snapping
+        if (dateChanged) { self.render(el); return; }
         el.querySelector("#dStartNote").textContent = "Saved — Day 1 is " +
           UI.fmtShort(Store.state.startDate);
       });
@@ -104,12 +131,28 @@
 
       var word = el.querySelector("#dResetWord");
       var resetBtn = el.querySelector("#dReset");
+      var killBtn = el.querySelector("#dKill");
       word.addEventListener("input", function () {
-        resetBtn.disabled = word.value !== "DELETE";
+        var armed = word.value === "DELETE";
+        resetBtn.disabled = !armed;
+        if (killBtn) killBtn.disabled = !armed;
       });
       resetBtn.addEventListener("click", function () {
         Store.reset();
         self.render(el);
+      });
+      if (killBtn) killBtn.addEventListener("click", async function () {
+        if (!confirm("Delete your account and all its data, permanently?\n\n" +
+          "There is no undo. Export a backup first if you might come back.")) return;
+        killBtn.disabled = true;
+        killBtn.textContent = "Deleting…";
+        var err = await Auth.deleteAccount();
+        if (err) {
+          alert("Could not delete the account: " + err);
+          killBtn.textContent = "Delete account";
+          killBtn.disabled = false;
+        }
+        // On success, the sign-out reloads into the sign-in page.
       });
     },
   };

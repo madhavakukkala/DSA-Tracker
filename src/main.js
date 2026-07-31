@@ -35,10 +35,11 @@
       '<div class="onboard">' +
       '<p class="eyebrow">32 weeks · 3h DSA + 3h dev daily · Striver A2Z</p>' +
       '<h1 class="page-title">Set up your plan</h1>' +
-      '<p class="onboard-lede">The plan is 32 weeks of 7-day blocks: <b>six study days, ' +
-      "then a rest day for consolidation</b>. The date you pick is Day 1 — every week and " +
-      "every revision date is counted from it. Then choose your two daily 3-hour windows: " +
-      "one for DSA, one for development.</p>" +
+      '<p class="onboard-lede">The plan is 32 weeks of 7-day blocks: <b>six study days, then ' +
+      "Day 7 to consolidate</b> — no new topics that day; you re-solve what fought back and " +
+      "cover core CS. The date you pick is Day 1 — every week and every revision date is " +
+      "counted from it. Then choose your two daily 3-hour windows: one for DSA, one for " +
+      "development.</p>" +
       '<form id="obForm" class="onboard-form" novalidate>' +
       '<label class="f-field"><span>Your name</span>' +
       '<input name="username" maxlength="30" value="' + UI.esc(name) + '" autocomplete="nickname"></label>' +

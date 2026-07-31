@@ -40,6 +40,16 @@
   }
   function signOut() { if (client) client.auth.signOut(); }
 
+  // Deletes the auth user via the delete_user() RPC (see README SQL); the
+  // trackers row cascades away with it. Returns an error message or null.
+  async function deleteAccount() {
+    if (!client || !session) return "Not signed in.";
+    var r = await client.rpc("delete_user");
+    if (r.error) return r.error.message;
+    await client.auth.signOut();
+    return null;
+  }
+
   // ---- the sign-in gate ----
   function renderGate(el) {
     var mode = "in"; // 'in' | 'up'
@@ -132,6 +142,7 @@
     userEmail: userEmail,
     metaUsername: metaUsername,
     signOut: signOut,
+    deleteAccount: deleteAccount,
     renderGate: renderGate,
     get client() { return client; },
   };

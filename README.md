@@ -66,10 +66,23 @@ over 7 days old; listen to it.
    alter table trackers enable row level security;
    create policy "own rows" on trackers
      for all using (auth.uid() = user_id) with check (auth.uid() = user_id);
+
+   -- Self-serve account deletion (Data screen → Delete account).
+   -- security definer lets the function remove the caller's own auth user;
+   -- the trackers row cascades away with it.
+   create or replace function delete_user()
+   returns void
+   language sql
+   security definer
+   set search_path = ''
+   as $$
+     delete from auth.users where id = auth.uid();
+   $$;
    ```
 
    The policy is the security boundary: every user can read and write only
-   their own row, enforced by the database itself.
+   their own row, enforced by the database itself. `delete_user()` can only
+   ever delete the account of whoever calls it.
 3. **Settings → API**: copy the *Project URL* and the *anon public* key into
    `src/config.js`. (The anon key is designed to be public — the row-level
    security above is what protects the data.)
